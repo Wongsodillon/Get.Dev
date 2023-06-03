@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <link href="CSS/HomePage.css" rel="stylesheet">
+  <link href="CSS/logoStyles.css" rel="stylesheet"> 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inika:wght@400;700&family=Nova+Flat&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="header-logo">
+      <img class="logo" src="assets/Logo.png">
+      <div class="header-text">
+        <p class="getdev"><span class="get">get</span><span class="dev">Dev</span><span class="kurungs">()</span></p>
+        <p class="dialog">Code your way to a new career</p>
+      </div>
+    </div>
+    <div class="profile-bar">
+      <p class="username"></p>
+      <img class="profile-pic" src="assets/blank-profile-picture-973460_1280.webp">
+      <img src="assets/notif-icon.png" class="notif-icon">
+    </div>
+  </nav>
+  <div class="search-container">
+    <input type="text" placeholder="Job Title, Keywords, Company" class="job-search">
+    <input type="text" placeholder="Country, City" class="location-search">
+  </div>
+  <main>
+    <aside>
+      <p class="filters-text">Filters</p>
+      <div class="filter">
+        <header class="head-filter">
+          <p class="filter-title">Date Posted</p>
+          <input type="checkbox" class="arrow-check" id="checkarrow">
+          <label for="checkarrow"><img src="assets/arrow-icon.png" class="arrow"></label>
+        </header>
+        <div class="filter-container">
+          <input type="checkbox" id="pastweek" class="check">
+          <label for="pastweek">Past Week</label>
+        </div>
+        <div class="filter-container">
+          <input type="checkbox" id="pastmonth" class="check">
+          <label for="pastmonth">Past Month</label>
+        </div>
+        <div class="filter-container">
+          <input type="checkbox" id="pastyear" class="check">
+          <label for="pastyear">Past Year</label>
+        </div>
+      </div>
+      <div class="filter">
+        <header class="head-filter">
+          <p class="filter-title">Experience Level</p>
+          <input type="checkbox" class="arrow-check" id="checkarrow">
+          <label for="checkarrow">
+            <img src="assets/arrow-icon.png" class="arrow">
+          </label>
+        </header>
+        <div class="filter-container">
+          <input type="checkbox" id="internship" class="check">
+          <label for="internship">Internship</label>
+        </div>
+        <div class="filter-container">
+          <input type="checkbox" id="entrylevel" class="check">
+          <label for="entrylevel">Entry Level</label>
+        </div>
+        <div class="filter-container">
+          <input type="checkbox" id="associate" class="check">
+          <label for="associate">Associate</label>
+        </div>
+        <div class="filter-container">
+          <input type="checkbox" id="midsenior" class="check">
+          <label for="midsenior">Mid-Senior Level</label>
+        </div>
+        <div class="filter-container">
+          <input type="checkbox" id="director" class="check">
+          <label for="director">Director</label>
+        </div>
+        <div class="filter-container">
+          <input type="checkbox" id="executive" class="check">
+          <label for="executive">Executive</label>
+        </div>
+      </div>
+      <div class="filter">
+        <header class="head-filter">
+          <p class="filter-title">Job Type</p>
+          <input type="checkbox" class="arrow-check" id="checkarrow">
+          <label for="checkarrow">
+            <img src="assets/arrow-icon.png" class="arrow">
+          </label>
+        </header>
+        <div class="filter-container">
+          <input type="checkbox" id="parttime" class="check">
+          <label for="parttime">Part Time</label>
+        </div>
+        <div class="filter-container">
+          <input type="checkbox" id="fulltime" class="check">
+          <label for="fulltime">Full Time</label>
+        </div>
+        <div class="filter-container">
+          <input type="checkbox" id="intern" class="check">
+          <label for="intern">Intern</label>
+        </div>
+      </div>
+      <div class="filter">
+        <header class="head-filter">
+          <p class="filter-title">Onsite-Remote</p>
+          <input type="checkbox" class="arrow-check" id="checkarrow">
+          <label for="checkarrow">
+            <img src="assets/arrow-icon.png" class="arrow">
+          </label>
+        </header>
+        <div class="filter-container">
+          <input type="checkbox" id="onsite" class="check">
+          <label for="onsite">Onsite</label>
+        </div>
+        <div class="filter-container">
+          <input type="checkbox" id="hybrid" class="check">
+          <label for="hybrid">Past Month</label>
+        </div>
+        <div class="filter-container">
+          <input type="checkbox" id="remote" class="check">
+          <label for="remote">Remote</label>
+        </div>
+      </div>
+    </aside>
+  </main>
+</body>
+<script type="module" src="Javascript/HomePage.js"></script>
+</html>

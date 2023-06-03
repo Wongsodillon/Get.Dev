@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animated Form Placeholder</title>
+  <link href="formStyles.css" rel="stylesheet">
+</head>
+<body>
+  <form>
+    <div class="form-group">
+      <input type="text" id="name" name="name" required>
+      <label for="name">Name</label>
+    </div>
+    <div class="form-group">
+      <input type="email" id="email" name="email" required>
+      <label for="email">Email</label>
+    </div>
+    <div class="form-group">
+      <textarea id="message" name="message" required></textarea>
+      <label for="message">Message</label>
+    </div>
+    <div class="form-group">
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" required>
+    </div>
+    <button type="submit">Submit</button>
+  </form>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,138 @@
+:root {
+  --white: #f4f4f4;
+  --black: #101010;
+  --background-color: hsla(211, 95%, 25%, 1);
+  --mesh-gradient: radial-gradient(at 7% 11%, hsla(207,100%,28%,1) 0px, transparent 50%),
+  radial-gradient(at 93% 76%, hsla(214,75%,14%,0.64) 0px, transparent 50%),
+  radial-gradient(at 9% 46%, hsla(214,75%,14%,0.51) 0px, transparent 50%),
+  radial-gradient(at 17% 73%, hsla(229,64%,40%,0.45) 0px, transparent 50%),
+  radial-gradient(at 55% 1%, hsla(214,75%,14%,1) 0px, transparent 50%),
+  radial-gradient(at 98% 6%, hsla(214,75%,26%,1) 0px, transparent 50%),
+  radial-gradient(at 43% 98%, hsla(208,100%,27%,1) 0px, transparent 50%),
+  radial-gradient(at 72% 57%, hsla(229,50%,52%,0.51) 0px, transparent 50%),
+  radial-gradient(at 31% 89%, hsla(214,75%,14%,1) 0px, transparent 50%);
+  --blue: #004E92;
+  --drop-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+  --grey: #515151;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+}
+.navbar {
+  width: 100%;
+  height: 5.25rem;
+  background: linear-gradient(269.74deg, rgba(44, 60, 101, 0.74) -72.47%,
+            rgba(44, 41, 77, 0.879479) 15.72%, #17315C 98.57%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-left {
+  padding-left: 2rem;
+}
+.header-logo {
+  margin-top: -0.6rem;
+}
+.logo {
+  width: 5rem;
+  height: 4rem;
+}
+.getdev {
+  font-size: 2rem;
+}
+.dialog {
+  color: var(--white);
+}
+.nav-right {
+  padding-right: 6%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 50%;
+  gap: 2rem;
+}
+.nav-right > button {
+  background: none;
+  border: none;
+  font-family: Outfit;
+  color: var(--white);
+  font-size: 1.25rem;
+  cursor:pointer
+}
+main {
+  display: flex;
+  gap: 0;
+}
+.find-jobs {
+  height: calc(100vh - 5.25rem);
+  background-color: var(--background-color);
+  background-image: var(--mesh-gradient);
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-inline: 4%;
+}
+.hire {
+  height: calc(100vh - 5.25rem);
+  background-color: var(--white);
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-inline: 4%;
+}
+.find-jobs > p {
+  color: var(--white);
+}
+.hire > p {
+  color: var(--background-color);
+  font-weight: 500;
+}
+.title {
+  font-size: clamp(24px, 2.76vw, 2.5rem);
+  font-family: Inter;
+  font-weight: 500;
+  margin: 0;
+  margin-block-end: 1rem;
+}
+.title > span, .title2 > span {
+  color: #46D780;
+}
+.content {
+  text-align: center;
+  font-size: clamp(12px, 2vw, 1.2rem);
+  color: var(--white);
+  font-family: Inter;
+  line-height: 2rem;
+  margin-inline: 6%;
+}
+.find-jobs > button, .hire > button {
+  width: clamp(100px, 25vw, 11rem);
+  height: 3rem;
+  border-radius: 10px;
+  border: none;
+  font-family: Inter;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+.signup-search {
+  color: var(--blue);
+}
+.signup-hire {
+  color: var(--white);
+  background-color: var(--background-color);
+}
+@media (max-width: 700px) {
+  main {
+    display: none;
+  }
+}

@@ -1,0 +1,42 @@
+.header-logo {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5%;
+    align-items: center;
+  }
+  .header-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: nowrap;
+  }
+  .logo {
+    width: 6rem;
+    height: 5rem;
+  }
+  .header-text > p {
+    margin: 0;
+  }
+  .getdev {
+    font-family: Inika;
+    font-size: 2.75rem;
+    font-weight: bold;
+  }
+  .get {
+    color: #346D8D;
+  }
+  .get::after {
+    content: ".";
+    color: #A8A8A8;
+  }
+  .dev {
+    color: #C37B0F;
+  }
+  .kurungs {
+    color: #a8a8a8;
+  }
+  .dialog {
+    font-size: 1rem;
+    font-family: Inter;
+    white-space: nowrap;
+  }

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link href="CSS/loginPageStyles.css" rel="stylesheet">
+  <link href="CSS/logoStyles.css" rel="stylesheet"> 
+  <link rel="stylesheet" href="CSS/var.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inika:wght@400;700&family=Nova+Flat&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="error-message">
+    <p id="error"></p>
+  </div>
+  <main>
+    <div class="header-logo">
+      <img class="logo" src="assets/Logo.png">
+      <div class="header-text">
+        <p class="getdev"><span class="get">get</span><span class="dev">Dev</span><span class="kurungs">()</span></p>
+        <p class="dialog">Code your way to a new career</p>
+      </div>
+    </div>
+    <div class="form">
+      <div class="sign-in-with">
+        <p class="sign-in-with-text">Sign in with</p>
+        <img src="assets/google_logo.webp" class="google-logo">
+        <img src="assets/GitHub-Mark.png" class="github-logo">
+      </div>
+      <form class="email-pass-form">
+        <input type="text" placeholder="Email" id="email">
+        <input type="password" placeholder="Password" id="password"> 
+        <a class="forget-password">Forget Password</a>
+        <button class="login-btn">Log In</button>
+      </form>
+      <p class="not-member">Not a Member? <span class="sign-up">Sign Up</span></p>
+    </div>
+  </main>
+<script type="module" src="Javascript/LoginPageScript.js"></script>
+</body>
+</html>

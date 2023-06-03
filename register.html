@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="CSS/var.css">
+  <link rel="stylesheet" href="CSS/logoStyles.css">
+  <link rel="stylesheet" href="CSS/registerStyles.css"> 
+  <title>Register</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inika:wght@400;700&family=Nova+Flat&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-left">
+      <div class="header-logo">
+        <img class="logo" src="assets/Logo.png">
+        <div class="header-text">
+          <p class="getdev"><span class="get">get</span><span class="dev">Dev</span><span class="kurungs">()</span></p>
+          <p class="dialog">Code your way to a new career</p>
+        </div>
+      </div>
+    </div>
+    <div class="nav-right">
+      <button>Contact Us</button>
+      <button id="login">Log In</button>
+    </div>
+  </nav>
+  <main>
+    <div class="find-jobs">
+      <p class="title"><span>Find Jobs</span> with get.Dev()</p>
+      <p class="content">
+        Discover your dream job and take the next step in 
+        your career by creating an account today. Access a 
+        wide range of job listings,with 
+        personalized search filters and notifications, finding the 
+        perfect opportunity has never been easier. Sign up now and 
+        open the doors to exciting career possibilities.
+      </p>
+      <button class="signup-search">Sign Up & Search</button>
+    </div>
+    <div class="hire">
+      <p class="title"><span>Hire</span> with get.Dev()</p>
+      <p class="content">
+        Discover your dream job and take the next step in 
+        your career by creating an account today. Access a 
+        wide range of job listings,with 
+        personalized search filters and notifications, finding the 
+        perfect opportunity has never been easier. Sign up now and 
+        open the doors to exciting career possibilities.
+      </p>
+      <button class="signup-hire">Sign Up & Hire</button>
+    </div>
+  </main>
+<script>
+  const hire = document.querySelector(".signup-hire").onclick = () => {
+    window.location.href = "employerRegister.html"
+  }
+  const findJobs = document.querySelector(".signup-search").onclick = () => {
+    window.location.href = "employeeRegister.html"
+  }
+  const login = document.getElementById("login").onclick = () => {
+    window.location.href = "loginPage.html"
+  }
+</script>
+</body>
+</html>

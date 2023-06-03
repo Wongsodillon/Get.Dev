@@ -1,0 +1,165 @@
+:root {
+  --white: #f4f4f4;
+  --black: #101010;
+  --background-color: hsla(211, 95%, 25%, 1);
+  --blue: #004E92;
+  --mesh-gradient: radial-gradient(at 7% 11%, hsla(207,100%,28%,1) 0px, transparent 50%),
+  radial-gradient(at 93% 76%, hsla(214,75%,14%,0.64) 0px, transparent 50%),
+  radial-gradient(at 9% 46%, hsla(214,75%,14%,0.51) 0px, transparent 50%),
+  radial-gradient(at 17% 73%, hsla(229,64%,40%,0.45) 0px, transparent 50%),
+  radial-gradient(at 55% 1%, hsla(214,75%,14%,1) 0px, transparent 50%),
+  radial-gradient(at 98% 6%, hsla(214,75%,26%,1) 0px, transparent 50%),
+  radial-gradient(at 43% 98%, hsla(208,100%,27%,1) 0px, transparent 50%),
+  radial-gradient(at 72% 57%, hsla(229,50%,52%,0.51) 0px, transparent 50%),
+  radial-gradient(at 31% 89%, hsla(214,75%,14%,1) 0px, transparent 50%);
+  --drop-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+  --grey: #515151;
+}
+
+body {
+    background-color:var(--background-color);
+    background-image: var(--mesh-gradient);
+/* background-image: radial-gradient(at 7% 11%, hsla(207,100%,28%,1) 0px, transparent 50%); */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  position: relative;
+}
+p {
+  margin: 0;
+  padding: 0;
+}
+.error-message {
+  height: 3.5rem;
+  width: 300px;
+  background-color: #ffdce0;
+  position: absolute;
+  top: 2%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-width: 1px;
+  border-color: #87404b;
+  border-style: solid;
+  transform: translateY(-150%);
+  transition: transform 0.3s ease;
+}
+.error-message > p {
+  font-size: 1rem;
+  font-family: Inter;
+  color: #87404b;
+}
+main {
+  height: 32.75em;
+  width:22.5rem;
+  background-color: var(--white);
+  border-radius: 20px;
+  padding-inline: 2%;
+  padding-block: 2%;
+  display: inline-block;
+}
+.form {
+  margin-top: 15%;
+  padding-inline: 4%;
+  display: flex;
+  flex-direction: column;
+}
+.form > p {
+  font-family: Inter;
+}
+.sign-in-with {
+  display: flex;
+  align-items: center;
+  gap: 3%;
+  padding-bottom: 0.75rem;
+  margin-bottom: 5%;
+  border-bottom: 1px solid var(--black);
+}
+.sign-in-with > img {
+  cursor: pointer;
+}
+.google-logo {
+  width: 2.35rem;
+  height: 2.35rem;
+}
+.github-logo {
+  width: 3.125rem;
+  height:3.125rem;
+}
+.sign-in-with-text {
+  font-size: 1.5rem;
+  color: var(--black);
+  font-family: Open Sans;
+  font-weight: 400;
+}
+.email-pass-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20%;
+  justify-content: center;
+  align-items: center;
+}
+.email-pass-form > input {
+  border-width: 1px;
+  border-color: var(--black);
+  border-style: solid;
+  height: 2.5rem;
+  width: 90%;
+  margin-block-end: 6%;
+  border-radius: 10px;
+}
+input::placeholder {
+  font-family: Inter;
+  font-size: 1.25rem;
+  color: var(--black);
+  font-weight: 400;
+  /* Adjust the height value to vertically center the text */
+}
+input[type="text"], input[type="password"] {
+  font-size: 1.2rem;
+  font-family: Open Sans;
+  padding-inline: 0.8rem;
+}
+.forget-password {
+  font-size: 1.1rem;
+  font-family: Open Sans;
+  display: block;
+  text-align: right !important;
+  color: #3B71CA;
+  cursor: pointer;
+  width: 100%;
+  margin-block-end: 6%;
+  transition: all 0.2s ease-in;
+}
+.forget-password:hover {
+  text-decoration: underline;
+}
+.login-btn {
+  width: 6rem;
+  padding: 0.8rem;
+  display: block;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: 500;
+  font-family: Inter;
+  background-color: var(--blue);
+  border:none;
+  color: var(--white);
+  border-radius: 4px;
+  margin-block-end: 3rem;
+}
+.not-member {
+  text-align: center;
+  font-size: 1.125rem;
+  color: var(--grey);
+  user-select: none;
+}
+.sign-up {
+  font-size: 1rem;
+  color: var(--blue);
+  cursor: pointer;
+  font-weight: 700;
+}

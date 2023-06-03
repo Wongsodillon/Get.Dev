@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="CSS/logoStyles.css">
+  <link rel="stylesheet" href="CSS/var.css">
+  <link href="CSS/SignIn.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inika:wght@400;700&family=Nova+Flat&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <main class="left-side">
+    <div class="header-logo">
+      <img class="logo" src="assets/Logo.png">
+      <div class="header-text">
+        <p class="getdev"><span class="get">get</span><span class="dev">Dev</span><span class="kurungs">()</span></p>
+        <p class="dialog">Code your way to a new career</p>
+      </div>
+    </div>
+    <div class="form-container">
+
+      <form class="form-create" id="form1">
+        <div class="create-container">
+          <p class="create-acc-text">Create Account</p>
+          <p class="start-apply-txt">Start applying jobs by creating an account</p>
+        </div>
+        <p class="username-error err">Username exist</p>
+        <input type="text" placeholder="Username" id="username">
+        <p class="password-error err">Password must be 8 characters</p>
+        <input type="password" placeholder="Password" id="password">
+        <p class="confirm-error err">Password not matching</p>
+        <input type="password" placeholder="Confirm Password" id="confirm">
+        <div class="alt-register">
+          <p class="register-with">Or register with</p>
+          <img src="assets/google_logo.webp" class="google-logo">
+          <img src="assets/GitHub-Mark.png" class="github-logo">
+        </div>
+        <div class="button-container1">
+          <button class="next-button" type="submit" id="next1">Next</button>
+          <p class="got-account">Already have an account? <span id="signin">Sign In</span></p>
+        </div>
+      </form>
+
+      <form class="form-personal" id="form2">
+        <div class="create-container">
+          <p class="create-acc-text">Fill Company Information</p>
+          <p class="start-apply-txt">Start applying jobs by creating an account</p>
+        </div>
+        <p class="err name-error">Name must not be empty</p>
+        <div class="dual-form">
+          <input type="text" placeholder="First Name" id="first">
+          <input type="text" placeholder="Last Name" id="last">
+        </div>
+        <p class="err email-error">Email format: yourname@example.com</p>
+        <input type="text" placeholder="Work Email" id="email">
+        <p class="err company-error">Invalid Company</p>
+        <input type="text" placeholder="Company Name" id="company">
+        <div class="dual-form">
+          <p class="phone-error err">Invalid Phone Number</p>
+          <input type="text" placeholder="Phone Number" id="phn">
+          <p class="err country-error">Select a Country</p>
+          <input type="text" placeholder="Country" id="country">
+        </div>
+        <div class="button-container2">
+          <button class="back-button" type="submit" id="back1">Back</button>
+          <button class="next-button" id="next2">Next</button>
+        </div>
+      </form>
+
+      <form class="form-address" id="form3">
+        <div class="create-container">
+          <p class="create-acc-text">Fill Address Information</p>
+          <p class="start-apply-txt">Start applying jobs by creating an account</p>
+        </div>
+  
+        <input type="text" placeholder="Company Address Line 1">
+        <input type="text" placeholder="Company Address Line 2">
+        <input type="text" placeholder="Company Address Line 3">
+        <div class="dual-form">
+          <input type="text" placeholder="Unit Number">
+          <input type="text" placeholder="Province">
+        </div>
+        <div class="dual-form">
+          <input type="text" placeholder="City">
+          <input type="number" placeholder="Zip Code">
+        </div>
+        <div class="button-container2">
+          <button class="back-button" id="back2">Back</button>
+          <button class="next-button" id="employerSubmit">Next</button>
+        </div>
+      </form>
+      
+    </div>
+  </main>
+  <main class="right-side">
+    <div class="content">
+      <p class="title">
+        Find Jobs as an Employer
+      </p>
+      <p class="about-us">
+        Welcome to our community! We offer a platform for employers to post job openings and 
+        connect with qualified developers. Join us to gain access to a diverse pool of talented job 
+        seekers. Our user-friendly tools allow for easy management of job postings, resume reviews, and applicant 
+        tracking. Start building hiring developers today by creating an account and post your job openings!
+      </p>
+    </div>
+  </main>
+<script type="module" src="Javascript/EmployerRegister.js"></script>
+</body>
+</html>
