@@ -137,3 +137,28 @@ saveButtons.forEach(button => {
         }
     })
 })
+
+let searchBar = document.getElementById("searches")
+let locationBar = document.getElementById("locations")
+let searchContainer = document.getElementById("form")
+let jobs = document.querySelectorAll(".job")
+let noJob = document.querySelector(".no-jobs")
+// console.log(searchBar, locationBar, searchContainer)
+searchContainer.addEventListener("submit", e => {
+    e.preventDefault()
+    const search = searchBar.value.trim().toLowerCase()
+    const locationSearch = locationBar.value.trim().toLowerCase()
+    let found = false
+    Array.from(jobs).forEach(job => {
+        let title = job.querySelector(".job-title").textContent.toLowerCase()
+        let company = job.querySelector(".company-name").textContent.toLowerCase()
+        let location = job.querySelector(".job-location").textContent.toLowerCase()
+        let visible = (title.includes(search) || company.includes(search)) && location.includes(locationSearch)
+        if (visible) found = true
+        job.classList.toggle("hide", !visible)
+    })
+    if (!found) {
+        noJob.style.display = "block"
+    }
+    else noJob.style.display = "none"
+})

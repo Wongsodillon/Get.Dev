@@ -87,9 +87,12 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+form {
+  display: flex;
   gap: 2rem;
 }
-.search-container > input {
+.forms > input {
   height: 2.25rem;
   width: clamp(100px, 90vw, 22.5rem);
   border-width: 1px;
@@ -100,6 +103,16 @@ body {
   font-size: 0.98rem;
   font-family: Inter;
   color: #212121;
+}
+.search-button {
+  background-color: #6668e2;
+  border: none;
+  border-radius: 8px;
+  color: var(--white);
+  font-family: Inter;
+  padding-inline: 1rem;
+  cursor:pointer;
+  font-size: 1rem;
 }
 input:focus { 
   outline: none;
@@ -206,7 +219,14 @@ label {
   gap: 0.875rem;
   border-radius: 8px;
 }
-
+.job.hide {
+  display: none;
+}
+.no-jobs {
+  color: var(--white);
+  font-size: 2rem;
+  display: none;
+}
 .job-img {
   width: 10rem;
   height: 10rem;

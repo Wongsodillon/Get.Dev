@@ -29,8 +29,11 @@
     </div>
   </nav>
   <div class="search-container">
-    <input type="text" placeholder="Job Title, Keywords, Company" class="job-search">
-    <input type="text" placeholder="Country, City" class="location-search">
+    <form id="form" class="forms">
+      <input type="text" autocomplete="off" placeholder="Job Title, Keywords, Company" class="job-search" id="searches">
+      <input type="text" autocomplete="off" placeholder="Country, City" class="location-search" id="locations">
+      <button type="submit" class="search-button">Search</button>
+    </form>
   </div>
   <main>
     <aside>
@@ -130,6 +133,7 @@
         </div>
       </div>
     </aside>
+    <p class="no-jobs">No Jobs Found</p>
     <div class="job-list">
 
       <!-- <div class="job">
