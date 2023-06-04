@@ -61,9 +61,9 @@ signIn.addEventListener("click", () => {
 })
 submit.addEventListener("click", e => {
     e.preventDefault()
-    let id = (users.length + 1).toString()
-    let tmp = [id, username,password,"employee",first,last, email,phn, country,dob]
-    addUser(...tmp)
-    console.log(users)
+    // let id = (users.length + 1).toString()
+    // let tmp = [id, username,password,"employee",first,last, email,phn, country,dob]
+    // addUser(...tmp)
+    // console.log(users)
     window.location.href = `loginPage.html`;
 })
