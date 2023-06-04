@@ -65,6 +65,8 @@ body {
   font-size: 1.25rem;
   color: var(--white);
   font-family: Inter;
+  user-select: none;
+  cursor: pointer;
 }
 .notif-icon {
   filter: invert();
@@ -77,7 +79,7 @@ body {
   border-radius: 50%;
 }
 .search-container {
-  background-color: var(--white);
+  background-color: #2E5477;
   padding-top: 4.2rem;
   height: 4.2rem;
   margin-bottom: 1rem;
@@ -105,9 +107,11 @@ input:focus {
 main {
   margin-inline: 4.5rem;
   margin-top: 2rem;
+  display: flex;
+  gap: 7%;
 }
 aside {
-  max-width: 19.2%;
+  width: 20%;
 }
 aside > p {
   font-family: Inter;
@@ -183,6 +187,106 @@ label {
   transform: translateX(20%);
 }
 
+.job-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 0.8rem;
+}
+
+.job {
+  height: 10rem;
+  width: 60vw;
+  background-color: var(--white);
+  display: grid;
+  padding-block: 1rem;
+  padding-inline-start: 1rem;
+  padding-inline-end: 2rem;
+  grid-template-columns: auto 1fr;
+  gap: 0.875rem;
+  border-radius: 8px;
+}
+
+.job-img {
+  width: 10rem;
+  height: 10rem;
+}
+.job-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.upper-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.job-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.upper-right-details {
+  display: flex;
+}
+.date-posted::after {
+  content: "";
+  border-inline: 0.5px solid #9b9b9b;
+  margin-inline: 0.8rem;
+}
+.company-name {
+  font-style: italic;
+  margin-block: 0.4rem;
+}
+.salary-range {
+  color: #23AE52;
+  font-weight: 700;
+}
+.level-container {
+  display: flex;
+  gap:0.75rem;
+  font-size: 1rem;
+}
+.location-container {
+  display: flex;
+  align-items: center;
+}
+.location-icon, .people-icon {
+  width: 20px;
+  height: 20px;
+  margin-inline-end: 0.4rem;
+}
+.lower-details {
+  margin-top: -0.3rem;
+  display: flex;
+  justify-content: space-between;
+}
+.button-container {
+  display: flex;
+  gap: 1rem;
+  margin-right: -0.75rem;
+}
+.button-container > button {
+  height: 2.5rem;
+  padding-inline: 1.75rem;
+  cursor: pointer;
+  border: none;
+  width: 6.75rem;
+  border-radius: 8px;
+  font-family: Inter;
+  font-size: 1rem;
+  color: var(--white);
+}
+.apply-button {
+  background-color: #62B5E3;
+  transition: opacity 0.15s;
+}
+.save-button {
+  background-color: var(--black);
+  transition: all 0.1s ease-in-out;
+}
+.apply-button:hover {
+  opacity: 0.75;
+}
 @media (max-width: 768px) {
   aside {
     display: flex;
