@@ -1,13 +1,28 @@
 import { users } from "./UserDatabase.js";
 import { JobList } from "./JobDatabase.js";
 
+console.log(JobList)
+
 const urlParams = new URLSearchParams(window.location.search);
 const userId = urlParams.get('id')
-const user = users.find(user => user.id === userId)
+let randomNumber = Math.floor(Math.random() * 9000) + 1000;
 const username = document.querySelector(".username")
-username.textContent = user.username
+const profilePic = document.getElementById("profile-pic")
+let user
+if (userId !== null) {
+    user = users.find(user => user.id === userId)
+    username.textContent = user.username
+}
+else {
+    username.textContent = "user" + randomNumber
+}
 
 const arrows = document.querySelectorAll(".arrow-check")
+const tmpFilter = document.querySelectorAll(".filter-container")
+tmpFilter.forEach(filter => {
+    filter.style.display = ""
+    filter.style.marginBottom = ""
+})
 arrows.forEach(arrow => {
     arrow.addEventListener("change", () => {
         const title = arrow.closest("header")
@@ -46,6 +61,7 @@ for (let i = 0; i < JobList.length; i++) {
     let jobTitle = document.createElement("p")
     jobTitle.textContent = JobList[i].title
     jobTitle.classList.add("job-title")
+    jobTitle.classList.add(JobList[i].id)
     
     let upperRight = document.createElement("div")
     upperRight.classList.add("upper-right-details")
@@ -107,6 +123,7 @@ for (let i = 0; i < JobList.length; i++) {
     let applyButton = document.createElement("button")
     applyButton.textContent = "Apply"
     applyButton.classList.add("apply-button")
+    applyButton.classList.add(JobList[i].id)
     let saveButton = document.createElement("button")
     saveButton.textContent = "Save"
     saveButton.classList.add("save-button")
@@ -143,7 +160,6 @@ let locationBar = document.getElementById("locations")
 let searchContainer = document.getElementById("form")
 let jobs = document.querySelectorAll(".job")
 let noJob = document.querySelector(".no-jobs")
-// console.log(searchBar, locationBar, searchContainer)
 searchContainer.addEventListener("submit", e => {
     e.preventDefault()
     const search = searchBar.value.trim().toLowerCase()
@@ -161,4 +177,28 @@ searchContainer.addEventListener("submit", e => {
         noJob.style.display = "block"
     }
     else noJob.style.display = "none"
+})
+
+const editProfile = () => {
+    window.location.href = `EditProfile.html?id=${user.id}`
+}
+
+username.addEventListener("click", editProfile)
+profilePic.addEventListener("click", editProfile)
+
+let titles = document.querySelectorAll(".job-title")
+let applies = document.querySelectorAll(".apply-button")
+
+titles.forEach(title => {
+    title.addEventListener("click", () => {
+        const JobID = title.classList[1]
+        window.location.href = `JobDetails.html?id=${JobID}`
+    })
+})
+
+applies.forEach(apply => {
+    apply.addEventListener("click", () => {
+        const JobID = apply.classList[1]
+        window.location.href = `JobDetails.html?id=${JobID}`
+    })
 })

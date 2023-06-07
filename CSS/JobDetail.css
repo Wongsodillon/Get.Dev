@@ -1,0 +1,190 @@
+:root {
+  --white: #f4f4f4;
+  --black: #101010;
+  --background-color: hsla(211, 95%, 25%, 1);
+  --mesh-gradient: radial-gradient(at 7% 11%, hsla(207,100%,28%,1) 0px, transparent 50%),
+  radial-gradient(at 93% 76%, hsla(214,75%,14%,0.64) 0px, transparent 50%),
+  radial-gradient(at 9% 46%, hsla(214,75%,14%,0.51) 0px, transparent 50%),
+  radial-gradient(at 17% 73%, hsla(229,64%,40%,0.45) 0px, transparent 50%),
+  radial-gradient(at 55% 1%, hsla(214,75%,14%,1) 0px, transparent 50%),
+  radial-gradient(at 98% 6%, hsla(214,75%,26%,1) 0px, transparent 50%),
+  radial-gradient(at 43% 98%, hsla(208,100%,27%,1) 0px, transparent 50%),
+  radial-gradient(at 72% 57%, hsla(229,50%,52%,0.51) 0px, transparent 50%),
+  radial-gradient(at 31% 89%, hsla(214,75%,14%,1) 0px, transparent 50%);
+  --gradient: linear-gradient(180deg, #8534F0 -7.44%, #1B1A51 8.23%, #29458A 100%);
+  --blue: #004E92;
+  --drop-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+  --grey: #515151;
+}
+p, label, li, ul {
+  margin: 0;
+  font-family: Inter;
+}
+li {
+  margin-left: -12px;
+}
+body {
+  background-color: var(--background-color);
+  background-image: var(--gradient);
+  margin: 0;
+  padding: 0;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  background-color: #1C1D55;
+  padding-block: 0.2rem;
+  height: 4rem;
+  width: 100%;
+  position: fixed;
+  z-index: 1000;
+}
+.header-logo {
+  margin-left: 1rem;
+  gap: 6px !important;
+  align-items: center;
+}
+.header-text {
+  margin-top: -0.5rem;
+}
+.logo {
+  width: 4rem !important;
+  height: 3.5rem !important;
+}
+.dialog {
+  color: var(--white);
+  font-size: 0.875rem !important;
+}
+.getdev {
+  font-size: 1.7rem !important;
+}
+.profile-bar {
+  padding-right: 3rem;
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+}
+.username {
+  font-size: 1.25rem;
+  color: var(--white);
+  font-family: Inter;
+  user-select: none;
+  cursor: pointer;
+}
+.notif-icon {
+  filter: invert();
+  width: 1.75rem;
+  height: 1.75rem;
+}
+.profile-pic {
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 50%;
+  cursor: pointer;
+}
+header {
+  padding-top: 4.2rem;
+  height: 12.5rem;
+  display: flex;
+  background-color: var(--white);
+}
+.header-left {
+  flex: 1.5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header-mid {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10%;
+  flex: 3;
+}
+.header-right {
+  flex: 1.5;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  gap: 15%;
+}
+.job-img {
+  width: 11.25rem;
+  height: 11.25rem;
+}
+.job-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: -0.75rem;
+}
+.company-name {
+  font-size: 1.25rem;
+}
+.detail-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.detail-container > p {
+  white-space: nowrap;
+  font-size: 1rem;
+}
+.icon {
+  width: 21.25px;
+  height: 21.25px;
+  margin-inline-end: 0.5rem;
+}
+
+.details {
+  width: clamp(80%, 80vw, 80%);
+  display: flex;
+  gap: 8%;
+}
+.apply-button {
+  background-color: #62B5E3;
+  transition: opacity 0.15s;
+}
+.save-button {
+  background-color: var(--black);
+  transition: all 0.1s ease-in-out;
+}
+.apply-button:hover {
+  opacity: 0.75;
+}
+.header-right > button {
+  height: 2.5rem;
+  padding-inline: 1.75rem;
+  cursor: pointer;
+  border: none;
+  width: 7.5rem;
+  border-radius: 8px;
+  font-family: Inter;
+  font-size: 1rem;
+  color: var(--white);
+}
+.requirements-container, .desc-container {
+  margin-top: 3rem;
+  padding-inline: 10%;
+}
+.title {
+  color: var(--white);
+  font-size: 2rem;
+}
+.line {
+  width: 100%;
+  border: 1px solid var(--white);
+  margin-bottom: 1rem;
+}
+ul {
+  list-style-type: decimal;
+}
+.requirements > li, .job-desc > li {
+  font-size: 1.35rem;
+  margin-bottom: 1rem;
+  color: var(--white);
+}
+.desc-container {
+  margin-bottom: 8rem;
+}
