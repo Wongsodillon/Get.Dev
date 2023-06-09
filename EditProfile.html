@@ -12,6 +12,124 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  
+  <aside>
+    <div class="profile-pic-container">
+      <img class="profile-pic" id="profile-pic">
+      <img class="edit-profile">
+    </div>
+    <p class="username" id="username"></p>
+    <div class="button-container">
+      <button class="profile-button prime" id="edit-profile">Edit Profile</button>
+      <button class="profile-button" id="change-pass">Change Password</button>
+      <button class="profile-button" id="track-jobs">Track Jobs</button>
+      <button class="profile-button" id="logout">Log Out</button>
+    </div>
+  </aside>
+  <main class="section-1">
+    <p class="title">PROFILE</p>
+    <div class="main-container">
+      <form class="forms">
+        <div class="dual-form">
+          <div>
+            <p class="label">First Name</p>
+            <input class="first-name form" type="text">
+          </div>
+          <div>
+            <p class="label">Last Name</p>
+            <input class="last-name form" type="text">
+          </div>
+        </div>
+        <div class="form-container">
+          <p class="label">Email</p>
+          <input class="email-form form" type="email">
+        </div>
+        <div class="form-container">
+          <p class="label">Phone Number</p>
+          <input class="phone-form form" type="number">
+        </div>
+        <div class="form-container">
+          <p class="label">Date of Birth</p>
+          <input class="dob-form form" type="date">
+        </div>
+        <div class="form-container">
+          <p class="label">Country</p>
+          <input class="country-form form" type="text">
+        </div>
+        <input type="submit" class="save-button">
+      </form>
+    </div>
+    <p class="title">ADDRESS</p>
+    <div class="main-container">
+      <form class="forms">
+        <div class="form-container">
+          <p class="label">Street Address 1</p>
+          <input class="address-1 form" type="text">
+        </div>
+        <div class="form-container">
+          <p class="label">Street Address 2</p>
+          <input class="address-2 form" type="text">
+        </div>
+        <div class="form-container">
+          <p class="label">Street Address 3</p>
+          <input class="address-3 form" type="text">
+        </div>
+        <div class="dual-form">
+          <div>
+            <p class="label">Unit Number</p>
+            <input class="unit-number form" type="number">
+          </div>
+          <div>
+            <p class="label">Province</p>
+            <input class="province form" type="text">
+          </div>
+        </div>
+        <div class="dual-form">
+          <div>
+            <p class="label">City</p>
+            <input class="city form" type="text">
+          </div>
+          <div>
+            <p class="label">Zip Code</p>
+            <input class="zip-code form" type="text">
+          </div>
+        </div>
+        <input type="submit" class="save-button">
+      </form> 
+    </div>
+  </main>
+  <main class="section-2">
+    <p class="title">CHANGE PASSWORD</p>
+    <div class="main-container">
+      <form class="forms">
+        <div class="form-container">
+          <p class="label">Email</p>
+          <input class="email2 form" type="email">
+        </div>
+        <div class="form-container">
+          <p class="label">Old Password</p>
+          <input class="old-password form" type="password">
+        </div>
+        <div class="form-container">
+          <p class="label">New Password</p>
+          <input class="new-password form" type="password">
+        </div>
+        <div class="form-container">
+          <p class="label">Confirm New Password</p>
+          <input class="confirm-password form" type="password">
+        </div>
+        <input type="submit" class="save-button">
+      </form>
+    </div>
+  </main>
+  <main class="section-3">
+    <div class="title-container">
+      <button class="title-2" id="saved">SAVED JOBS</button>
+      <button class="title-2" id="applied">APPLIED JOBS</button>
+    </div>
+    <div class="job-container">
+       
+    </div>
+  </main>
+<script type="module" src="Javascript/EditProfile.js"></script>
 </body>
 </html>

@@ -14,6 +14,7 @@ class Job {
         this.size = size
         this.date = date
         this.jobDetail = jobDetail
+        this.applicants = []
     }
 }
 
