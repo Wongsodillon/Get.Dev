@@ -148,7 +148,7 @@ input[type="text"], input[type="number"], input[type="email"], input[type="date"
   width: 20%;
   margin-top: 1rem;
   margin-bottom: 0;
-  background-color: var(--blue);
+  background-color: #004E92;
   color: var(--white);
   font-size: 1.25rem;
   height: 3.125rem;
@@ -168,9 +168,7 @@ input[type="text"], input[type="number"], input[type="email"], input[type="date"
   background: none;
   border: none;
 }
-.select {
-  
-}
+
 .job-container {
   height: auto;
   display: flex;

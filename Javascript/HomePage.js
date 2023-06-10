@@ -1,6 +1,12 @@
 import { JobList } from "./JobDatabase.js";
 
+
+const paginationContainer = document.getElementById("pagination-container")
+let currentPage = 1
+const itemsPerPage = 5
+let pageCount = Math.ceil(JobList.length / itemsPerPage)
 displayJobs(JobList)
+generatePaginations()
 
 const user = JSON.parse(localStorage.getItem("User"))
 console.log(user)
@@ -41,10 +47,52 @@ arrows.forEach(arrow => {
     })
 })
 
+function saveButtons() {
+    let saveChecked = false
+    const saveButtons = document.querySelectorAll(".save-button")
+    saveButtons.forEach(button => {
+    button.addEventListener("click", () => {
+        if (saveChecked === false) {
+            button.style.backgroundColor = "#fafafa"
+            button.style.color = "#101010"
+            button.textContent = "Saved"
+            button.style.border = "1px solid #9b9b9b"
+            saveChecked = true
+            user.saved.push(button.classList[1])
+        }
+        else {
+            button.style.backgroundColor = "#101010"
+            button.style.color = "#fafafa"
+            button.textContent = "Save"
+            saveChecked = false
+            user.saved.splice(button.classList[1] - 1, 1)
+        }
+    })
+})}
+
+function titleNavigate() {
+    let titles = document.querySelectorAll(".job-title")
+    titles.forEach(title => {
+        title.addEventListener("click", () => {
+            const JobID = title.classList[1]
+            window.location.href = `JobDetails.html?id=${JobID}`
+        })
+    })
+}
+
+function applyNavigate() {
+    let applies = document.querySelectorAll(".apply-button")
+    applies.forEach(apply => {
+    apply.addEventListener("click", () => {
+            const JobID = apply.classList[1]
+            window.location.href = `JobDetails.html?id=${JobID}`
+        })
+    })
+}
 
 function displayJobs(JobList) {
     const list = document.querySelector(".job-list")
-    for (let i = 0; i < JobList.length; i++) {
+    for (let i = (currentPage-1) * itemsPerPage; i < ((currentPage-1) * itemsPerPage)+ itemsPerPage; i++) {
         let job = document.createElement("div")
         job.classList.add("job")
     
@@ -133,31 +181,12 @@ function displayJobs(JobList) {
     
         jobDetails.append(upperDetails, companyName, salaryRange, levelContainer, lowerDetails)
         job.append(jobImg,jobDetails)
-        list.append(job)
+        list.insertBefore(job, paginationContainer)
     }
+    saveButtons()
+    titleNavigate()
+    applyNavigate()
 }
-
-let saveChecked = false
-const saveButtons = document.querySelectorAll(".save-button")
-saveButtons.forEach(button => {
-    button.addEventListener("click", () => {
-        if (saveChecked === false) {
-            button.style.backgroundColor = "#fafafa"
-            button.style.color = "#101010"
-            button.textContent = "Saved"
-            button.style.border = "1px solid #9b9b9b"
-            saveChecked = true
-            user.saved.push(button.classList[1])
-        }
-        else {
-            button.style.backgroundColor = "#101010"
-            button.style.color = "#fafafa"
-            button.textContent = "Save"
-            saveChecked = false
-            user.saved.splice(button.classList[1] - 1, 1)
-        }
-    })
-})
 
 let searchBar = document.getElementById("searches")
 let locationBar = document.getElementById("locations")
@@ -190,19 +219,31 @@ const editProfile = () => {
 username.addEventListener("click", editProfile)
 profilePic.addEventListener("click", editProfile)
 
-let titles = document.querySelectorAll(".job-title")
-let applies = document.querySelectorAll(".apply-button")
+function generatePaginations() {
+    for (let i = 1; i <= pageCount; i++) {
+        let button = document.createElement("button")
+        button.classList.add("page-button", i)
+        paginationContainer.appendChild(button)
+        button.textContent = i
+        if (i == 1) {
+            button.classList.add("active")
+        }
+    }
+}
 
-titles.forEach(title => {
-    title.addEventListener("click", () => {
-        const JobID = title.classList[1]
-        window.location.href = `JobDetails.html?id=${JobID}`
+const togglePageButtons = (pageButton) => {
+    paginationContainer.querySelector(".active").classList.remove("active")
+    // console.log(paginationContainer.querySelector(`.${pageButton}`))
+}
+
+const pageButtons = paginationContainer.querySelectorAll(".page-button")
+pageButtons.forEach(button => {
+    button.addEventListener("click", () => {
+        document.querySelectorAll(".job").forEach(job => job.style.display = "none")
+        currentPage = parseInt(button.textContent)
+        paginationContainer.querySelector(".active").classList.remove("active")
+        button.classList.add("active")
+        displayJobs(JobList)
     })
 })
 
-applies.forEach(apply => {
-    apply.addEventListener("click", () => {
-        const JobID = apply.classList[1]
-        window.location.href = `JobDetails.html?id=${JobID}`
-    })
-})

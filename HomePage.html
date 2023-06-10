@@ -132,6 +132,23 @@
           <label for="remote">Remote</label>
         </div>
       </div>
+      <div class="filter">
+        <header class="head-filter">
+          <p class="filter-title">Salary Range</p>
+          <input type="checkbox" class="arrow-check" id="checkarrow">
+          <label for="checkarrow">
+            <img src="assets/arrow-icon.png" class="arrow">
+          </label>
+        </header>
+        <div class="filter-container">
+          <label for="min-salary" class="salary-label">Min Salary</label>
+          <input type="number" id="min-salary" class="check">
+        </div>
+        <div class="filter-container">
+          <label for="max-salary" class="salary-label">Max Salary</label>
+          <input type="number" id="max-salary" class="check">
+        </div>
+      </div>
     </aside>
     <p class="no-jobs">No Jobs Found</p>
     <div class="job-list">
@@ -172,7 +189,13 @@
         </div>
       </div> 
       -->
-
+      <div class="pagination" id="pagination-container">
+        <!-- <button class="page-button active">1</button>
+        <button class="page-button">2</button>
+        <button class="page-button">3</button>
+        <button class="page-button">4</button>
+        <button class="page-button">5</button> -->
+      </div>
     </div>
   </main>
 </body>

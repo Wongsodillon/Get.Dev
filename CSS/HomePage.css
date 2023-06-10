@@ -200,7 +200,18 @@ label {
   height: 1.5rem;
   transform: translateX(20%);
 }
-
+.salary-label {
+  margin-right: 1rem;
+  white-space: nowrap;
+}
+#min-salary, #max-salary {
+  height: 1.75rem;
+  border:none;
+  font-size: 1.125rem;
+  font-family: Inter;
+  max-width: 8rem;
+  padding-left:0.3rem;
+}
 .job-list {
   display: flex;
   flex-direction: column;
@@ -308,6 +319,27 @@ label {
 }
 .apply-button:hover {
   opacity: 0.75;
+}
+.pagination {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  gap: 2%;
+}
+.pagination > button {
+  width: 2rem;
+  height: 2rem;
+  background-color: var(--white);
+  color: var(--black);
+  border:none;
+  font-family: Inter;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+.page-button.active {
+  background-color: var(--black);
+  color: var(--white);
 }
 @media (max-width: 768px) {
   aside {
