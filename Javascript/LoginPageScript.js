@@ -35,8 +35,12 @@ const loginValidate = e => {
         } else if (result === false) {
           message.textContent = "Incorrect password";
         } else if (result) {
+          localStorage.clear()
+          sessionStorage.clear()
           localStorage.setItem("User", JSON.stringify(result))
-          window.location.href = `HomePage.html`;
+          if (result.role === "employer") window.location.href = `EmployerPage.html`
+          else window.location.href = `HomePage.html`
+          return
         }
     }
     const error = document.querySelector(".error-message")

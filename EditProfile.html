@@ -10,6 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inika:wght@400;700&family=Nova+Flat&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="assets/Logo.png">
 </head>
 <body>
   <aside>
@@ -54,6 +55,14 @@
         <div class="form-container">
           <p class="label">Country</p>
           <input class="country-form form" type="text">
+        </div>
+        <div class="form-container">
+          <p class="label">Profession</p>
+          <input class="profession-form form" type="text">
+        </div>
+        <div class="form-container">
+          <p class="label">About You</p>
+          <textarea class="about-you-form"></textarea>
         </div>
         <input type="submit" class="save-button">
       </form>
@@ -123,9 +132,10 @@
   </main>
   <main class="section-3">
     <div class="title-container">
-      <button class="title-2" id="saved">SAVED JOBS</button>
+      <button class="title-2 active" id="saved">SAVED JOBS</button>
       <button class="title-2" id="applied">APPLIED JOBS</button>
     </div>
+    <div class="active-indicator"></div>
     <div class="job-container">
        
     </div>

@@ -1,5 +1,7 @@
 import { JobList } from "./JobDatabase.js";
 
+const user = JSON.parse(localStorage.getItem("User"))
+
 const urlParams = new URLSearchParams(window.location.search);
 const JobId = urlParams.get('id')
 const job = JobList.find(jobs => jobs.id === parseInt(JobId))
@@ -22,36 +24,122 @@ jobLevel.textContent = job.level
 jobSalary.textContent = `Rp ${job.salaryStart.toLocaleString()} - Rp ${job.salaryEnd.toLocaleString()}`
 jobPosted.textContent = `Posted on ${job.date}`
 
-const req = document.getElementById("req")
-for (let i = 0; i < job.jobDetail.req.length; i++) {
-    let reqContent = document.createElement("li")
-    reqContent.textContent = job.jobDetail.req[i]
-    req.append(reqContent)
+generateRequirements()
+
+function generateRequirements() {
+    const req = document.getElementById("req")
+    if (Array.isArray(job.jobDetail.req)) {
+        for (let i = 0; i < job.jobDetail.req.length; i++) {
+            let reqContent = document.createElement("li")
+            reqContent.textContent = job.jobDetail.req[i]
+            req.style.padding = ""
+            req.append(reqContent)
+        }
+    }
+    else if (typeof job.jobDetail.req === "string") {
+        const reqText = document.createElement("p")
+        reqText.textContent = job.jobDetail.req
+        req.style.padding = "0"
+        req.append(reqText)
+    }
 }
 
 const desc = document.getElementById("desc")
-for (let i = 0; i < job.jobDetail.desc.length; i++) {
-    let descContent = document.createElement("li")
-    descContent.textContent = job.jobDetail.desc[i]
-    desc.append(descContent)
+if (Array.isArray(job.jobDetail.desc)) {
+    for (let i = 0; i < job.jobDetail.desc.length; i++) {
+        let descContent = document.createElement("li")
+        descContent.textContent = job.jobDetail.desc[i]
+        desc.append(descContent)
+    }
+}
+else if (typeof job.jobDetail.desc === "string") {
+    const descText = document.createElement("p")
+    descText.textContent = job.jobDetail.desc
+    desc.style.padding = "0"
+    desc.append(descText)
 }
 
-let saveChecked = false
+const about = document.getElementById("about")
+let aboutContent = document.createElement("p")
+aboutContent.textContent = job.jobDetail.about
+aboutContent.classList.add("about-content")
+about.append(aboutContent)
+
+const saveButton = document.querySelector(".save-button")
+console.log(saveButton)
+if (user.saved.indexOf(JobId + '') != -1) {
+    saveButton.classList.add("active")
+    saveButton.textContent = "Saved"
+}
+else {
+    saveButton.textContent = "Save"
+}
+if (user.applied.indexOf(JobId + '') != -1) {
+    document.querySelector(".apply-button").classList.add("applied")
+    document.querySelector(".apply-button").textContent = "APPLIED"
+}
+function updateSaved(data) {
+    const tmp = JSON.parse(localStorage.getItem("User"))
+    tmp.saved = data
+    console.log(tmp)
+    localStorage.setItem("User", JSON.stringify(tmp))
+}
+
 const saveButtons = document.querySelectorAll(".save-button")
 saveButtons.forEach(button => {
     button.addEventListener("click", () => {
-        if (saveChecked === false) {
-            button.style.backgroundColor = "#fafafa"
-            button.style.color = "#101010"
-            button.textContent = "Saved"
-            button.style.border = "1px solid #9b9b9b"
-            saveChecked = true
+        if (button.classList.contains("active")) {
+            button.textContent = "Save"
+            button.classList.remove("active")
+            user.saved = user.saved.filter(element => element !== JobId)
+            console.log(user.saved)
+            updateSaved(user.saved)
         }
         else {
-            button.style.backgroundColor = "#101010"
-            button.style.color = "#fafafa"
-            button.textContent = "Save"
-            saveChecked = false
+            button.classList.add("active")
+            button.textContent = "Saved"
+            user.saved.push(JobId)
+            updateSaved(user.saved)
         }
     })
 })
+
+document.addEventListener("DOMContentLoaded", () => {
+    const applyButton = document.querySelector('.apply-button');
+    const cancelButton = document.querySelector('.cancel-button');
+    const apply = document.querySelector(".apply-job-button")
+    if (!applyButton.classList.contains("active")) {
+        applyButton.addEventListener('click', applyJob)
+    }
+    cancelButton.addEventListener('click', closeApply);
+    apply.addEventListener("click", submitApplication)
+});
+
+function applyJob(e) {
+    e.preventDefault();
+    const apply = document.getElementById('application')
+    apply.classList.add("active")
+    apply.showModal();
+}
+
+function closeApply(e) {
+    e.preventDefault();
+    const apply = document.getElementById('application');
+    apply.classList.remove("active")
+    apply.close();
+}
+
+function submitApplication(e) {
+    e.preventDefault()
+    const apply = document.getElementById("application")
+    apply.classList.remove("active")
+    apply.close()
+    user.applied.push(JobId)
+    console.log(user.applied)
+    let tmp = JSON.parse(localStorage.getItem("User"))
+    tmp.applied = user.applied
+    localStorage.setItem("User", JSON.stringify(tmp))
+    document.querySelector(".apply-button").classList.add("applied")
+    document.querySelector(".apply-button").textContent = "APPLIED"
+    document.querySelector(".apply-button").removeEventListener("click", applyJob)
+}

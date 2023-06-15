@@ -14,6 +14,7 @@
   --blue: #004E92;
   --drop-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
   --grey: #515151;
+  --light-blue: #62b5e3;
 }
 
 p, button, label{
@@ -28,7 +29,6 @@ body {
   background-image: var(--mesh-gradient);
   padding-inline: 5rem;
   padding-block: 3rem;
-  padding-bottom: 200rem;
   display: flex;
   gap: 6.25%;
 }
@@ -84,7 +84,7 @@ aside {
 main {
   width: 75%;
 }
-.section-3, .section-2 {
+.section-2, .section-3 {
   display: none;
 }
 .title {
@@ -119,7 +119,7 @@ main {
 .forms > div {
   width: 100%;
 }
-.form-container > input {
+.form-container > input, .form-container > textarea {
   width: calc(100% - 1.5rem);
 }
 .dual-form > div {
@@ -140,9 +140,18 @@ input {
   margin-bottom: 12px;
   font-size: 1.25rem;
 }
-input[type="text"], input[type="number"], input[type="email"], input[type="date"], input[type="password"] {
+input[type="text"], input[type="number"], input[type="email"], input[type="date"], input[type="password"], textarea {
   padding-left: 0.75rem;
   padding-right: 0.75rem;
+}
+textarea {
+  padding-top: 0.75rem;
+  font-size:1.125rem;
+  font-family: Inter;
+  outline: none;
+  border-radius: 8px;
+  height: 10rem;
+  resize: vertical;
 }
 .save-button {
   width: 20%;
@@ -168,7 +177,10 @@ input[type="text"], input[type="number"], input[type="email"], input[type="date"
   background: none;
   border: none;
 }
-
+.title-2.active {
+  border-bottom: 3px solid var(--white);
+  border-radius: 2px;
+}
 .job-container {
   height: auto;
   display: flex;
@@ -260,7 +272,6 @@ input[type="text"], input[type="number"], input[type="email"], input[type="date"
 }
 .button-container-2 > button {
   height: 2.5rem;
-  padding-inline: 1.75rem;
   cursor: pointer;
   border: none;
   width: 6.75rem;
@@ -270,18 +281,21 @@ input[type="text"], input[type="number"], input[type="email"], input[type="date"
   margin-top: -0.5rem;
 }
 .apply-button {
-  background-color: #62B5E3;
+  background-color: var(--light-blue);
+}
+.cancel-button {
+  background-color: #da2c2c;
   transition: opacity 0.15s;
 }
-.saved-button {
-  color: var(--black);
-  background-color: var(--white);
+.saved-button.active {
+  color: var(--black) !important;
+  background-color: var(--white) !important;
   border: 1px solid var(--grey) !important;
   transition: all 0.1s ease-in-out;
 }
-.save-button {
-  color: var(--white);
-  background-color: var(--black);
+.saved-button {
+  color: var(--white) !important;
+  background-color: var(--black) !important;
 }
 .apply-button:hover {
   opacity: 0.75;
@@ -289,4 +303,5 @@ input[type="text"], input[type="number"], input[type="email"], input[type="date"
 .applied-button {
   background: none;
   color: var(--black);
+  cursor: auto !important;
 }

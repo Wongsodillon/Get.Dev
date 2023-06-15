@@ -1,0 +1,101 @@
+* {
+    padding: 0;
+    margin: 0;
+    
+  }
+  button, select, option {
+    cursor: pointer;
+  }
+  body {
+    background-color: #338cf4;
+  }
+  .container {
+    background-color: #ffffff;
+    width: 90vmin;
+    padding: 50px 30px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    border-radius: 10px;
+    box-shadow: 0 25px 50px rgba(7, 20, 35, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .options {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 15px;
+  }
+  button {
+    height: 3rem;
+    width: 3rem;
+    display: grid;
+    place-items: center;
+    border-radius: 3px;
+    border: none;
+    background-color: #ffffff;
+    outline: none;
+    color: #020929;
+  }
+  select {
+    padding: 0.5rem;
+    border: 1px solid #020929;
+    border-radius: 3px;
+  }
+  .options label,
+  .options select {
+    font-family: "Poppins", sans-serif;
+  }
+  .input-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  input[type="color"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    width: 40px;
+    height: 28px;
+    border: none;
+    cursor: pointer;
+  }
+  input[type="color"]::-webkit-color-swatch {
+    border-radius: 15px;
+    box-shadow: 0 0 0 2px #ffffff, 0 0 0 3px #020929;
+  }
+  input[type="color"]::-moz-color-swatch {
+    border-radius: 15px;
+    box-shadow: 0 0 0 2px #ffffff, 0 0 0 3px #020929;
+  }
+  #text-input {
+    margin-top: 10px;
+    border: 1px solid #dddddd;
+    padding: 20px;
+    height: 50vh;
+    overflow:auto;
+  }
+  .active {
+    background-color: #e0e9ff;
+  }
+  .submit-button {
+    background-color: #338cf4;
+    color: #fafafa;
+    padding-left: 2rem;
+    padding-right: 7.5rem;
+    font-size: 1.75rem;
+    transition: opacity 0.15s;
+    margin-top: 2rem;
+    margin-bottom: -1rem;
+    
+  }
+  .submit-button:hover {
+    opacity: 0.8;
+  }
+  .submit-button:active {
+    opacity: 0.6;
+  }

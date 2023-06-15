@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seek Developers</title>
+  <link href="CSS/logoStyles.css" rel="stylesheet"> 
+  <link href="CSS/SeekDevelopers.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inika:wght@400;700&family=Nova+Flat&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
+  <link rel="icon" href="assets/Logo.png">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="header-logo">
+      <img class="logo" src="assets/Logo.png">
+      <div class="header-text">
+        <p class="getdev"><span class="get">get</span><span class="dev">Dev</span><span class="kurungs">()</span></p>
+        <p class="dialog">Code your way to a new career</p>
+      </div>
+    </div>
+    <div class="profile-bar">
+      <p class="username"></p>
+      <img class="profile-pic" src="assets/dummy-profile.webp" id="profile-pic">
+      <img src="assets/notif-icon.png" class="notif-icon">
+    </div>
+  </nav>
+  <nav class="navbar-2">
+    <button class="manage-button">Manage Jobs</button>
+    <button class="seek-button active">Seek Developers</button>
+  </nav>
+  <main>
+    <form class="search-container">
+      <!-- <label for="talents" class="search-label">Search Developers</label> -->
+      <input type="text" class="search-bar" placeholder="Search Developers">
+    </form>
+    <div class="developers">
+      <!-- <div class="developer">
+        <img class="dev-profile" src="assets/Logo.png">
+        <div class="dev-info">
+          <p class="dev-name">Edrick Givian Hulbert</p>
+          <div class="profession-container">
+            <p class="dev-profession">Machine Learning Engineer</p>
+          </div>
+          <div class="about-container">
+            <p class="about-dev">lo Entrepreneur, pengalaman di bidang Back-End development, 
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id esse 
+                mollitia ducimus non quae adipisci fugiat, veniam harum nesciunt 
+                nostrum voluptatem tempore cum aspernatur dolores quidem similique 
+                eveniet odit autem.meraih penghargaan sebagai designer website terbaik 
+                Jakarta asdfasdfasdfdasfasdfasdfasdfasdfd idllasdnfon</p>
+          </div>
+          <div class="location-container">
+            <img class="icon" src="assets/location-icon.png">
+            <p class="dev-location">Jakarta, Indonesia</p>
+          </div>
+        </div>
+      </div> -->
+      
+    </div>
+  </main>
+  <dialog class="developer-details">
+    <p class="modal-title modal-name"></p>
+    <div class="email-container">
+      <p class="email-text">Email:<p class="modal-email"></p></p>
+      <p class="email-copied">Email Copied</p>
+    </div>
+    <p class="modal-phn"></p>
+    <p class="modal-location"></p>
+    <p class="modal-title about-title"></p>
+    <p class="modal-about"></p>
+    <p class="modal-title">Send a Message</p>
+    <textarea class="message-field"></textarea>
+    <div class="modal-buttons">
+      <button class="close-button">Close</button>
+      <button class="send-button">Send</button>
+    </div>
+  </dialog>
+<script type="module" src="Javascript/SeekDevelopers.js"></script>
+</body>
+</html>

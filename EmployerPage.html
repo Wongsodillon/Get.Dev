@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <link href="CSS/logoStyles.css" rel="stylesheet"> 
+  <link href="CSS/EmployerPage.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inika:wght@400;700&family=Nova+Flat&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
+  <link rel="icon" href="assets/Logo.png">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="header-logo">
+      <img class="logo" src="assets/Logo.png">
+      <div class="header-text">
+        <p class="getdev"><span class="get">get</span><span class="dev">Dev</span><span class="kurungs">()</span></p>
+        <p class="dialog">Code your way to a new career</p>
+      </div>
+    </div>
+    <div class="profile-bar">
+      <p class="username"></p>
+      <img class="profile-pic" src="assets/dummy-profile.webp" id="profile-pic">
+      <img src="assets/notif-icon.png" class="notif-icon">
+    </div>
+  </nav>
+  <nav class="navbar-2">
+    <button class="manage-button active">Manage Jobs</button>
+    <button class="seek-button">Seek Developers</button>
+  </nav>
+  <div class="job-list">
+    <button class="add-job-button" id="add-job">
+      <p class="post-job-text">Post Job</p>
+      <img src="assets/add-icon.png" class="add-icon">
+    </button>
+  </div>
+  <dialog class="post-job" id="post-job">
+    <nav class="modal-nav">
+      <p class="modal-title">Post Job</p>
+      <button class="close-button">
+        <img class="close-icon" src="assets/close-icon.png">
+      </button>
+    </nav>
+    <form class="job-form">
+      <div class="form-1">
+        <div class="form-container">
+          <label for="title">Job Title</label>
+          <input class="title-form" id="title">
+        </div>
+        <div class="form-container">
+          <label for="level">Job Level</label>
+          <select id="level" class="level-form">
+            <option value="none">-- Select Job Level --</option>
+            <option value="Internship">Internship</option>
+            <option value="Entry-Level">Entry-Level</option>
+            <option value="Associate">Associate</option>
+            <option value="Mid-Senior">Mid-Senior</option>
+            <option value="Director">Director</option>
+            <option value="Executive">Executive</option>
+          </select>
+        </div>
+        <div class="form-container">
+          <label for="type">Job Type</label>
+          <select id="type" class="type-form">
+            <option value="none">-- Select Job Type --</option>
+            <option value="Intern">Intern</option>
+            <option value="Part-Time">Part-Time</option>
+            <option value="Full-Time">Full-Time</option>
+          </select>
+        </div>
+        <div class="form-container">
+          <label for="site">Onsite/Remote</label>
+          <select id="site" class="site-form">
+            <option value="none">-- Onsite/Remote/Hybrid --</option>
+            <option value="Onsite">Onsite</option>
+            <option value="Hybrid">Hybrid</option>
+            <option value="Remote">Remote</option>
+          </select>
+        </div>
+        <div class="form-container">
+          <label for="salary">Job Salary</label>
+          <div class="salary-container dual-form">
+            <input class="min-salary-form" placeholder="Minimum Salary" id="min">
+            <input class="max-salary-form" placeholder="Maximum Salary" id="max">
+          </div>
+        </div>
+        <div class="form-container">
+          <label for="location">Location</label>
+          <input class="location-form" id="location">
+        </div>
+        <button class="next-post">Next</button>
+      </div>
+
+      <div class="form-2">
+        <div class="form-container">
+          <label class="title">About The Job</label>
+          <div class="text-editor">
+            <div class="options">
+              <!-- Text Format -->
+              <button id="bold" class="option-button format">
+                <i class="fa-solid fa-bold"></i>
+              </button>
+              <button id="italic" class="option-button format">
+                <i class="fa-solid fa-italic"></i>
+              </button>
+              <button id="underline" class="option-button format">
+                <i class="fa-solid fa-underline"></i>
+              </button>
+              <button id="strikethrough" class="option-button format">
+                <i class="fa-solid fa-strikethrough"></i>
+              </button>
+      
+              <!-- List -->
+              <button id="insertOrderedList" class="option-button">
+                <div class="fa-solid fa-list-ol"></div>
+              </button>
+              <button id="insertUnorderedList" class="option-button">
+                <i class="fa-solid fa-list"></i>
+              </button>
+      
+              <!-- Undo/Redo -->
+              <button id="undo" class="option-button">
+                <i class="fa-solid fa-rotate-left"></i>
+              </button>
+              <button id="redo" class="option-button">
+                <i class="fa-solid fa-rotate-right"></i>
+              </button>
+            </div>
+            <div class="text-input" contenteditable="true"></div>
+          </div>
+        </div>
+        <div class="form-container">
+          <label class="title">Job Requirements</label>
+          <div class="text-editor">
+            <div class="options">
+              <!-- Text Format -->
+              <button id="bold" class="option-button format">
+                <i class="fa-solid fa-bold"></i>
+              </button>
+              <button id="italic" class="option-button format">
+                <i class="fa-solid fa-italic"></i>
+              </button>
+              <button id="underline" class="option-button format">
+                <i class="fa-solid fa-underline"></i>
+              </button>
+              <button id="strikethrough" class="option-button format">
+                <i class="fa-solid fa-strikethrough"></i>
+              </button>
+      
+              <!-- List -->
+              <button id="insertOrderedList" class="option-button">
+                <div class="fa-solid fa-list-ol"></div>
+              </button>
+              <button id="insertUnorderedList" class="option-button">
+                <i class="fa-solid fa-list"></i>
+              </button>
+      
+              <!-- Undo/Redo -->
+              <button id="undo" class="option-button">
+                <i class="fa-solid fa-rotate-left"></i>
+              </button>
+              <button id="redo" class="option-button">
+                <i class="fa-solid fa-rotate-right"></i>
+              </button>
+            </div>
+            <div class="text-input" contenteditable="true"></div>
+          </div>
+        </div>
+        <div class="form-container">
+          <label class="title">Job Description</label>
+          <div class="text-editor">
+            <div class="options">
+              <!-- Text Format -->
+              <button id="bold" class="option-button format">
+                <i class="fa-solid fa-bold"></i>
+              </button>
+              <button id="italic" class="option-button format">
+                <i class="fa-solid fa-italic"></i>
+              </button>
+              <button id="underline" class="option-button format">
+                <i class="fa-solid fa-underline"></i>
+              </button>
+              <button id="strikethrough" class="option-button format">
+                <i class="fa-solid fa-strikethrough"></i>
+              </button>
+      
+              <!-- List -->
+              <button id="insertOrderedList" class="option-button">
+                <div class="fa-solid fa-list-ol"></div>
+              </button>
+              <button id="insertUnorderedList" class="option-button">
+                <i class="fa-solid fa-list"></i>
+              </button>
+      
+              <!-- Undo/Redo -->
+              <button id="undo" class="option-button">
+                <i class="fa-solid fa-rotate-left"></i>
+              </button>
+              <button id="redo" class="option-button">
+                <i class="fa-solid fa-rotate-right"></i>
+              </button>
+            </div>
+            <div class="text-input" contenteditable="true"></div>
+          </div>
+        </div>
+        <div class="btn-container">
+          <button class="back-post">Back</button>
+          <button type="submit" class="submit-post">Post</button>
+        </div>
+      </div>
+    </form>
+  </dialog>
+  <div class="overlay"></div>
+<script type="module" src="Javascript/EmployerPage.js"></script>
+</body>
+</html>

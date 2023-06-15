@@ -61,24 +61,48 @@
       </div>
     </div>
     <div class="header-right">
-      <button class="apply-button">Apply</button>
+      <button class="apply-button" id="apply-button">Apply</button>
       <button class="save-button">Save</button>
     </div>
   </header>
+  <div class="about-container" id="about">
+    <p class="title">About The Job</p>
+    <div class="line"></div>
+  </div>
   <div class="requirements-container">
-    <p class="title">Requirements</p><br>
+    <p class="title">Requirements</p>
     <div class="line"></div>
     <ul class="requirements" id="req">
 
     </ul>
   </div>
   <div class="desc-container">
-    <p class="title">Job Description</p><br>
+    <p class="title">Job Description</p>
     <div class="line"></div>
     <ul class="job-desc" id="desc">
 
     </ul>
   </div>
+  <dialog class="apply-job" id="application">
+    <p class="dialog-title">Apply Job</p>
+    <form class="application-form">
+      <input type="file" class="file-upload">
+      <p class="input-types">DOC, DOCX, PDF (Max 2MB)</p>
+      <div class="apply-input-container">
+        <label class="label-input">Cover Letter</label>
+        <textarea class="text-input-apply"></textarea>
+      </div>
+      <div class="apply-input-container">
+        <label class="label-input">Relevant Experience (optional)</label>
+        <textarea class="text-input-apply"></textarea>
+      </div>
+      <div class="apply-input-container"></div>
+      <div class="apply-buttons">
+        <button class="cancel-button">Cancel</button>
+        <button class="apply-job-button">Apply</button>
+      </div>
+    </form>
+  </dialog>
 <script type="module" src="Javascript/JobDetail.js"></script>
 </body>
 </html>

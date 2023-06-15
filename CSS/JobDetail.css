@@ -25,9 +25,10 @@ li {
 }
 body {
   background-color: var(--background-color);
-  background-image: var(--gradient);
+  background-image: var(--mesh-gradient);
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 .navbar {
   display: flex;
@@ -146,9 +147,22 @@ header {
   background-color: #62B5E3;
   transition: opacity 0.15s;
 }
+.apply-button.applied {
+  background: none;
+  color: var(--blue);
+  font-size: 1.5rem;
+  font-weight: 500;
+  font-style: italic;
+  transform:translateX(-15%);
+}
 .save-button {
   background-color: var(--black);
   transition: all 0.1s ease-in-out;
+}
+.save-button.active {
+  background-color: var(--white);
+  color: var(--black);
+  border: 1px solid #9b9b9b;
 }
 .apply-button:hover {
   opacity: 0.75;
@@ -164,7 +178,7 @@ header {
   font-size: 1rem;
   color: var(--white);
 }
-.requirements-container, .desc-container {
+.requirements-container, .desc-container, .about-container {
   margin-top: 3rem;
   padding-inline: 10%;
 }
@@ -175,16 +189,84 @@ header {
 .line {
   width: 100%;
   border: 1px solid var(--white);
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  margin-top: 1.5rem;
 }
 ul {
   list-style-type: decimal;
 }
-.requirements > li, .job-desc > li {
+.requirements > li, .job-desc > li, .about-content, .requirements > p, .job-desc > p {
   font-size: 1.35rem;
   margin-bottom: 1rem;
   color: var(--white);
+  font-family: Inter;
+}
+.about-content, .requirements > p, .job-desc > p {
+  line-height: 2.25rem;
 }
 .desc-container {
-  margin-bottom: 8rem;
+  margin-bottom: 6rem;
+}
+.apply-job {
+  width: 40%;
+  padding-block: 1rem;
+  display: flex;
+  flex-direction: column;
+  border: none;
+  border-radius: 8px;
+  padding-inline: 2rem;
+  padding-block: 1.5rem;
+  display: none;
+  transform: translateX(175%);
+  transition: all 0.5s ease-in-out;
+}
+.apply-job.active {
+  display: flex;
+  transform: translateX(0%);
+  transition: all 0.5s ease-in-out;
+}
+.apply-input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 1rem;
+}
+.apply-buttons {
+  display: flex;
+  justify-content: end;
+  gap: 5%;
+  align-items: center;
+}
+.dialog-title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.file-upload {
+  margin-bottom: 0.25rem;
+}
+.input-types {
+  font-size: 0.875rem;
+  color: var(--grey);
+  margin-bottom: 0.75rem;
+}
+.apply-buttons > button {
+  height: 2.875rem;
+  padding-inline: 1.125rem;
+  border: none;
+  border-radius: 4px;
+  cursor:pointer;
+  font-size: 1.25rem;
+  transition: opacity 0.15s;
+}
+.apply-job-button {
+  background-color: var(--blue);
+  color: var(--white);
+  font-family: Inter;
+}
+.text-input-apply {
+  height: 8rem;
+  resize: vertical;
+}
+.apply-buttons > button:hover {
+  opacity: 0.7;
 }
