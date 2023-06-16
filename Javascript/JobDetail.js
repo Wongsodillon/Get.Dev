@@ -2,9 +2,11 @@ import { JobList } from "./JobDatabase.js";
 
 const user = JSON.parse(localStorage.getItem("User"))
 
+const Jobs = JSON.parse(localStorage.getItem("List"))
+
 const urlParams = new URLSearchParams(window.location.search);
 const JobId = urlParams.get('id')
-const job = JobList.find(jobs => jobs.id === parseInt(JobId))
+const job = Jobs.find(jobs => jobs.id === parseInt(JobId))
 
 const jobImg = document.querySelector(".job-img")
 const jobTitle = document.querySelector(".job-title")
@@ -129,6 +131,17 @@ function closeApply(e) {
     apply.close();
 }
 
+function updateApplicantPool() {
+    console.log(job.applicants)
+    job.applicants.push(user)
+    console.log(job.applicants)
+    const tmpJobs = JSON.parse(localStorage.getItem("List"))
+    const getIndex = tmpJobs.findIndex(job => job.id == JobId)
+    tmpJobs[getIndex] = job
+    localStorage.setItem("List", JSON.stringify(tmpJobs))
+    console.log(JSON.parse(localStorage.getItem("List")))
+}
+
 function submitApplication(e) {
     e.preventDefault()
     const apply = document.getElementById("application")
@@ -142,4 +155,5 @@ function submitApplication(e) {
     document.querySelector(".apply-button").classList.add("applied")
     document.querySelector(".apply-button").textContent = "APPLIED"
     document.querySelector(".apply-button").removeEventListener("click", applyJob)
+    updateApplicantPool()
 }

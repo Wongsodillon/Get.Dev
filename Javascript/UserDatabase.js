@@ -12,6 +12,7 @@ class User {
         this.dob = dob
         this.img = img
         this.address = address
+        this.notification = []
     }
 }
 

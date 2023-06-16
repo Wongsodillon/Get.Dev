@@ -31,22 +31,24 @@ const loginValidate = e => {
     else {
         const result = validateCredentials(email,password)
         if (result == null) {
-          message.textContent = "Username does not exist";
+            message.textContent = "Username does not exist";
         } else if (result === false) {
-          message.textContent = "Incorrect password";
+            message.textContent = "Incorrect password";
         } else if (result) {
-          localStorage.clear()
-          sessionStorage.clear()
-          localStorage.setItem("User", JSON.stringify(result))
-          if (result.role === "employer") window.location.href = `EmployerPage.html`
-          else window.location.href = `HomePage.html`
-          return
+            sessionStorage.clear()
+            localStorage.clear()
+            localStorage.setItem("User", JSON.stringify(result))
+            if (result.role === "employer") window.location.href = `EmployerPage.html`
+            else {
+                window.location.href = `HomePage.html`
+            }
+            return
         }
     }
     const error = document.querySelector(".error-message")
     error.style.transform = "translateY(0)"
     setTimeout(() => {
-      error.style.transform = "translateY(-150%)"
+        error.style.transform = "translateY(-150%)"
     }, 4000)
 }
 document.querySelector(".login-btn").addEventListener("click", loginValidate)

@@ -14,6 +14,9 @@
   <link rel="icon" href="assets/Logo.png">
 </head>
 <body>
+  <div class="message-sent">
+    <p class="message-text">Message Sent</p>
+  </div>
   <nav class="navbar">
     <div class="header-logo">
       <img class="logo" src="assets/Logo.png">
@@ -33,6 +36,25 @@
     <button class="seek-button active">Seek Developers</button>
   </nav>
   <main>
+    <dialog class="developer-details">
+      <p class="modal-title modal-name"></p>
+      <div class="email-container">
+        <p class="email-text">Email:<p class="modal-email"></p></p>
+        <p class="email-copied">Email Copied</p>
+      </div>
+      <p class="modal-phn"></p>
+      <p class="modal-location"></p>
+      <p class="modal-title about-title"></p>
+      <p class="modal-about"></p>
+      <p class="modal-title">Send a Message</p>
+      <form action="" method="dialog">
+        <textarea class="message-field"></textarea>
+        <div class="modal-buttons">
+          <button class="close-button">Close</button>
+          <button class="send-button" type="submit">Send</button>
+        </div>
+      </form>
+    </dialog>
     <form class="search-container">
       <!-- <label for="talents" class="search-label">Search Developers</label> -->
       <input type="text" class="search-bar" placeholder="Search Developers">
@@ -62,23 +84,6 @@
       
     </div>
   </main>
-  <dialog class="developer-details">
-    <p class="modal-title modal-name"></p>
-    <div class="email-container">
-      <p class="email-text">Email:<p class="modal-email"></p></p>
-      <p class="email-copied">Email Copied</p>
-    </div>
-    <p class="modal-phn"></p>
-    <p class="modal-location"></p>
-    <p class="modal-title about-title"></p>
-    <p class="modal-about"></p>
-    <p class="modal-title">Send a Message</p>
-    <textarea class="message-field"></textarea>
-    <div class="modal-buttons">
-      <button class="close-button">Close</button>
-      <button class="send-button">Send</button>
-    </div>
-  </dialog>
 <script type="module" src="Javascript/SeekDevelopers.js"></script>
 </body>
 </html>

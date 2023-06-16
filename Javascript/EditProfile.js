@@ -18,6 +18,8 @@ const jobContainer = document.querySelector(".job-container")
 username.textContent = user.username
 profilePic.src = user.img
 
+fillForm()
+
 function fillForm() {
     document.querySelector(".first-name").value = user.firstName
     document.querySelector(".last-name").value = user.lastName
@@ -37,7 +39,31 @@ function fillForm() {
     document.querySelector(".zip-code").value = user.address.zip
 }
 
-fillForm()
+const profileForm = document.getElementById("profile-form")
+const addressForm = document.getElementById("address-form")
+document.querySelector(".back-to-home").addEventListener("click", () => window.location.href = `HomePage.html`)
+function updateUserDetails(...args) {
+    user.firstName = args[0]
+    user.lastName = args[1]
+    user.email = args[2]
+    user.phn = args[3]
+    user.country = args[4]
+    user.profession = args[5]
+    user.about = args[6]
+    console.log(user)
+    localStorage.setItem("User", JSON.stringify(user))
+}
+
+profileForm.addEventListener("submit", (e) => {
+    const firstName = document.querySelector(".first-name").value
+    const lastName = document.querySelector(".last-name").value
+    const email = document.querySelector(".email-form").value
+    const phn = document.querySelector(".phone-form").value
+    const country = document.querySelector(".country-form").value
+    const profession = document.querySelector(".profession-form").value
+    const about = document.querySelector(".about-you-form").value
+    updateUserDetails(firstName, lastName, email, phn, country, profession, about)
+})
 
 editProfile.addEventListener("click", () => {
     editProfile.classList.add("prime")
@@ -66,15 +92,12 @@ trackJobs.addEventListener("click", () => {
     section1.style.display = "none"
 })
 logout.addEventListener("click", () => {
-    localStorage.clear()
     window.history.pushState({}, '', 'loginPage.html');
     window.location.href = "loginPage.html"
 })
 
-console.log(user)
-
 function findJobByID(id) {
-    return JobList.find(job => job.id === id)
+    return JobList.find(job => job.id === parseInt(id))
 }
 
 function displaySaved() {
@@ -164,6 +187,12 @@ function displayApplied() {
     }
 }
 
+const emptyMessage = document.querySelector(".empty")
+emptyMessage.style.display = "none"
+if (user.saved.length <= 0) {
+    emptyMessage.textContent = "No Job Saved"
+    emptyMessage.style.display = "block"
+}
 const savedNav = document.getElementById("saved")
 const appliedNav = document.getElementById("applied")
 savedNav.addEventListener("click", () => {
@@ -172,7 +201,14 @@ savedNav.addEventListener("click", () => {
         savedNav.classList.add("active")
     }
     appliedNav.classList.remove("active")
-    displaySaved()
+    if (user.saved.length <= 0) {
+        emptyMessage.textContent = "No Job Saved"
+        emptyMessage.style.display = "block"
+    }
+    else {
+        emptyMessage.style.display = "none"
+        displaySaved()
+    }
 })
 appliedNav.addEventListener("click", () => {
     jobContainer.innerHTML = ``
@@ -180,7 +216,15 @@ appliedNav.addEventListener("click", () => {
         appliedNav.classList.add("active")
     }
     savedNav.classList.remove("active")
-    displayApplied()
+    if (user.applied.length <= 0) {
+        emptyMessage.textContent = "No Jobs Applied"
+        emptyMessage.styles.display = "block"
+    }
+    else {
+        emptyMessage.textContent = "No Jobs Applied"
+        emptyMessage.style.display = "none"
+        displayApplied()
+    }
 })
 
 function updateSaved(data) {
@@ -227,10 +271,45 @@ function updateApplicationList(data) {
 function cancelButtons() {
     const cancelButtons = document.querySelectorAll(".cancel-button")
     cancelButtons.forEach(button => {
-        button.addEventListener("click", () => {
-            user.applied = user.applied.filter(id => id !== button.classList[1])
-            updateApplicationList(user.applied)
-            const job = button.closest(".job").style.display = "none"
-        })
+        button.addEventListener("click", e => cancelConfirmation(e, button.classList[1], button))
+    })
+}
+
+function cancelConfirmation(e, jobID, DOMElement) {
+    e.preventDefault()
+    const job = findJobByID(jobID)
+    console.log(job, jobID, DOMElement)
+    const dialog = document.querySelector(".cancel-confirm")
+    dialog.classList.add(jobID)
+    const cancelButton = dialog.querySelector(".cancel-button")
+    cancelButton.classList.add(jobID)
+    dialog.querySelector(".confirm-prompt").textContent = `Cancel application to ${job.company}?`
+    dialog.style.display = "flex"
+    dialog.showModal()
+    const backConfirm = dialog.querySelector(".back-dialog")
+    const cancelConfirm = dialog.querySelector(".cancel-button")
+    backConfirm.addEventListener("click", () => {
+        dialog.close()
+        dialog.className = "cancel-confirm"
+        cancelButton.className = "cancel-button"
+    })
+    cancelButton.addEventListener("click", () => {
+        user.applied = user.applied.filter(id => id !== cancelConfirm.classList[1])
+        DOMElement.closest(".job").style.display = "none"
+        updateApplicationList(user.applied)
+        console.log(user.applied)
+        const tmpJobs = JSON.parse(localStorage.getItem("List"))
+        const tmpJob = tmpJobs.find(job => job.id == cancelConfirm.classList[1])
+        const getIndex = tmpJobs.findIndex(job => job.id == cancelConfirm.classList[1])
+        tmpJob.applicants = tmpJob.applicants.filter(obj => obj.id !== user.id)
+        tmpJobs[getIndex] = tmpJob
+        localStorage.setItem("List", JSON.stringify(tmpJobs))
+        dialog.className = "cancel-confirm"
+        cancelButton.className = "cancel-button"
+        dialog.close()
+        if (user.applied.length <= 0) {
+            emptyMessage.textContent = "No Jobs Applied"
+            emptyMessage.style.display = "block"
+        }
     })
 }

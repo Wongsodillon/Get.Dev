@@ -6,9 +6,19 @@ const username = document.querySelector(".username")
 const profilePic = document.getElementById("profile-pic")
 username.textContent = user.username
 profilePic.src = user.img
+
+const navigateEditProfile = () => window.location.href = `EmployerProfile.html`
+username.addEventListener("click", navigateEditProfile)
+profilePic.addEventListener("click", navigateEditProfile)
+if (localStorage.getItem("List") === null) {
+    console.log("Localstorage None")
+    localStorage.setItem("List", JSON.stringify(JobList))
+}
 if (sessionStorage.getItem("List") === null) {
+    console.log("Session Storage None")
     sessionStorage.setItem("List", JSON.stringify(getJobs()))
 }
+console.log(JSON.parse(localStorage.getItem("List")))
 const addButton = document.getElementById("add-job");
 const postJobGUI = document.getElementById("post-job")
 const overlay = document.querySelector(".overlay")

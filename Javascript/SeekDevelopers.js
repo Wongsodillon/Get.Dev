@@ -12,6 +12,11 @@ document.querySelector(".manage-button").addEventListener("click", () => window.
 const listContainer = document.querySelector(".developers")
 displayDevelopers(developers)
 
+const navigateEditProfile = () => window.location.href = `EmployerProfile.html`
+
+username.addEventListener("click", navigateEditProfile)
+profilePic.addEventListener("click", navigateEditProfile)
+
 function displayDevelopers(list) {
     for (let i = 0; i < list.length; i++) {
         listContainer.innerHTML += `
@@ -61,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const closeButton = document.querySelector(".close-button")
     closeButton.addEventListener("click", closeDetails)
     const sendButton = document.querySelector(".send-button")
-    sendButton.addEventListener("click", closeDetails)
+    sendButton.addEventListener("click", sendMessage)
 })
 
 function viewDetails(name, e) {
@@ -71,15 +76,30 @@ function viewDetails(name, e) {
     applyDetails(devDetail)
     const dialog = document.querySelector(".developer-details")
     dialog.showModal()
-    dialog.style.display = "flex"
+    
 }
 
 function closeDetails(e) {
     e.preventDefault()
     const dialog = document.querySelector(".developer-details")
-    dialog.querySelector(".email-copied").style.display = "none"
+    // dialog.querySelector(".email-copied").style.display = "none"
     dialog.close()
-    dialog.style.display = "none"
+    
+}
+
+function sendMessage(e) {
+    e.preventDefault()
+    const dialog = document.querySelector(".developer-details")
+    dialog.querySelector(".email-copied").style.display = "none"
+    const messageMessage = document.querySelector(".message-sent")
+    messageMessage.style.transform = "translateX(0)"
+    const message = dialog.querySelector(".message-field").value
+    console.log(message)
+    setTimeout(() => {
+        messageMessage.style.transform = "translateX(300%)"
+    }, 3500) 
+    dialog.querySelector(".message-field").value = ""
+    dialog.close()
 }
 
 function generateModal() {

@@ -8,8 +8,12 @@ if (sessionStorage.getItem("List") === null) {
 if (sessionStorage.getItem("CurrentPage") === null) {
     sessionStorage.setItem("CurrentPage", "1")
 }
+if (localStorage.getItem("List") === null) {
+    localStorage.setItem("List", JSON.stringify(JobList))
+}
 let lists = JSON.parse(sessionStorage.getItem("List"))
 const user = JSON.parse(localStorage.getItem("User"))
+console.log(JSON.parse(localStorage.getItem("List")))
 displayJobs()
 generatePaginations()
 pageButtonGeneration()

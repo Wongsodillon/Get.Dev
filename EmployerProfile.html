@@ -2,14 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Edit Profile</title>
-  <link rel="stylesheet" href="CSS/EditProfile.css">
+  <link href="CSS/logoStyles.css" rel="stylesheet"> 
+  <link href="CSS/EmployerProfile.css" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inika:wght@400;700&family=Nova+Flat&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
   <link rel="icon" href="assets/Logo.png">
 </head>
 <body>
@@ -22,7 +23,6 @@
     <div class="button-container">
       <button class="profile-button prime" id="edit-profile">Edit Profile</button>
       <button class="profile-button" id="change-pass">Change Password</button>
-      <button class="profile-button" id="track-jobs">Track Jobs</button>
       <button class="profile-button" id="logout">Log Out</button>
     </div>
     <button class="back-to-home">Back</button>
@@ -56,14 +56,6 @@
         <div class="form-container">
           <p class="label">Country</p>
           <input class="country-form form" type="text">
-        </div>
-        <div class="form-container">
-          <p class="label">Profession</p>
-          <input class="profession-form form" type="text">
-        </div>
-        <div class="form-container">
-          <p class="label">About You</p>
-          <textarea class="about-you-form"></textarea>
         </div>
         <input type="submit" class="save-button">
       </form>
@@ -131,23 +123,6 @@
       </form>
     </div>
   </main>
-  <main class="section-3">
-    <div class="title-container">
-      <button class="title-2 active" id="saved">SAVED JOBS</button>
-      <button class="title-2" id="applied">APPLIED JOBS</button>
-    </div>
-    <p class="empty"></p>
-    <div class="active-indicator"></div>
-    <div class="job-container">
-    </div>
-  </main>
-  <dialog class="cancel-confirm">
-    <p class="confirm-prompt"></p>
-    <div class="cancel-confirm-buttons">
-      <button class="back-dialog">BACK</button>
-      <button class="cancel-button">CONFIRM</button>
-    </div>
-  </dialog>
-<script type="module" src="Javascript/EditProfile.js"></script>
+<script type="module" src="Javascript/EmployerProfile.js"></script>
 </body>
 </html>
