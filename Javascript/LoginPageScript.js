@@ -36,7 +36,7 @@ const loginValidate = e => {
             message.textContent = "Incorrect password";
         } else if (result) {
             sessionStorage.clear()
-            localStorage.clear()
+            localStorage.setItem("Users", JSON.stringify(users))
             localStorage.setItem("User", JSON.stringify(result))
             if (result.role === "employer") window.location.href = `EmployerPage.html`
             else {

@@ -11,6 +11,7 @@
   radial-gradient(at 43% 98%, hsla(208,100%,27%,1) 0px, transparent 50%),
   radial-gradient(at 72% 57%, hsla(229,50%,52%,0.51) 0px, transparent 50%),
   radial-gradient(at 31% 89%, hsla(214,75%,14%,1) 0px, transparent 50%);
+  --gradient: linear-gradient(180deg, #29458A -7.44%, #1B1A51 8.23%, #29458A 100%);
   --blue: #004E92;
   --drop-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
   --grey: #515151;
@@ -105,6 +106,110 @@ html {
 }
 .navbar-2 > button.active {
   color: #C3C702;
+}
+.applicant-list {
+  width: 62.5vw;
+  border: none;
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+.dialog-title {
+  font-size: 1.75rem;
+  margin-bottom: 1.125rem;
+}
+.dialog-job-title {
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+}
+table {
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+th {
+  text-align: start;
+}
+.button-dialogs {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+.back-button {
+
+}
+.custom-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.custom-table th,
+.custom-table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.custom-table thead th {
+  background: var(--gradient);
+  font-weight: bold;
+  color: #fff;
+}
+
+.custom-table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.custom-table tbody tr:hover {
+  background-color: #f5f5f5;
+}
+
+.custom-table a {
+  display: inline-block;
+  padding: 6px 10px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.custom-table a:hover {
+  background-color: #0056b3;
+}
+th, td {
+  font-family: Inter;
+}
+.custom-table .view-button {
+  display: inline-block;
+  padding: 6px 10px;
+  background-color: var(--blue);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  border: none;
+  font-family: Inter;
+  transition: opacity 0.3s ease;
+}
+.custom-table .view-button:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+.back-button {
+  width: 6rem;
+  height: 2.5rem;
+  display: block;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: 500;
+  font-family: Inter;
+  background-color: var(--blue);
+  border:none;
+  color: var(--white);
+  border-radius: 4px;
+  transition: opacity 0.5 ease-in-out;
+}
+.back-button:hover {
+  opacity: 0.81;
 }
 .job-list {
   display: flex;

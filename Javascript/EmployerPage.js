@@ -18,7 +18,6 @@ if (sessionStorage.getItem("List") === null) {
     console.log("Session Storage None")
     sessionStorage.setItem("List", JSON.stringify(getJobs()))
 }
-console.log(JSON.parse(localStorage.getItem("List")))
 const addButton = document.getElementById("add-job");
 const postJobGUI = document.getElementById("post-job")
 const overlay = document.querySelector(".overlay")
@@ -28,9 +27,15 @@ document.querySelector(".seek-button").addEventListener("click", () => {
 })
 
 function getJobs() {
-    console.log(user.company)
-    return JobList.filter(job => job.company === user.company)
+    const tmpList = JSON.parse(localStorage.getItem("List"))
+    return tmpList.filter(job => job.company === user.company)
 }
+
+function getJobById(JobID) {
+    const tmpList = JSON.parse(sessionStorage.getItem("List"))
+    return tmpList.find(job => job.id == JobID)
+}
+
 
 function titleNavigate() {
     let titles = document.querySelectorAll(".job-title")
@@ -39,6 +44,67 @@ function titleNavigate() {
             const JobID = title.classList[1]
             window.location.href = `JobDetails.html?id=${JobID}`
         })
+    })
+}
+
+function applicantButton() {
+    let buttons = document.querySelectorAll(".apply-button")
+    buttons.forEach(button => {
+        button.addEventListener("click", (e) => viewApplicants(e, button.classList[1], button))
+    })
+}
+
+function viewApplicants(e, JobID, DOM) {
+    e.preventDefault()
+    const dialog = document.querySelector(".applicant-list")
+    dialog.showModal()
+    const job = getJobById(JobID)
+    console.log(job)
+    const applicants = job.applicants
+    console.log(applicants)
+    dialog.querySelector(".dialog-job-title").textContent = `${job.title} Applicants`
+    const backButton = dialog.querySelector(".back-button")
+    const tableBody = dialog.querySelector("tbody")
+    tableBody.innerHTML = ``
+    for (let i = 0; i < applicants.length; i++) {
+        const row = document.createElement("tr")
+
+        const nameCell = document.createElement("td")
+        nameCell.textContent = `${applicants[i].firstName} ${applicants[i].lastName}`
+
+        const currentDate = new Date()
+        const dateOfBirth = new Date(applicants[i].dob)
+        const age = currentDate.getFullYear() - dateOfBirth.getFullYear()
+        console.log(applicants[i].dob)
+        const ageCell = document.createElement("td")
+        ageCell.textContent = `${age}`
+
+        const emailCell = document.createElement("td")
+        emailCell.textContent = `${applicants[i].email}`
+
+        const jobTitle = document.createElement("td")
+        jobTitle.textContent = `${applicants[i].profession}`
+
+        const location = document.createElement("td")
+        location.textContent = `${applicants[i].address.city}`
+
+        const resumeCell = document.createElement("td")
+        const viewResume = document.createElement("button")
+        viewResume.textContent = "View Resume"
+        viewResume.classList.add("view-button")
+
+        resumeCell.appendChild(viewResume)
+        row.appendChild(nameCell)
+        row.append(ageCell)
+        row.appendChild(emailCell)
+        row.appendChild(jobTitle)
+        row.appendChild(location)
+        row.appendChild(resumeCell)
+        tableBody.appendChild(row)
+    }
+
+    backButton.addEventListener("click", () => {
+        dialog.close()
     })
 }
 
@@ -138,6 +204,7 @@ function displayJobs() {
         list.insertBefore(job, addButton)
     }
     titleNavigate()
+    applicantButton()
 }
 
 function hoverEffect(args) {
