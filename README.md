@@ -5,9 +5,9 @@ Get.Dev is a platform designed to connect developers and employers, simplifying 
 The platform aims to provide a seamless experience for both developers and employers, offering an intuitive interface and powerful search features. By bringing together developers and employers, Get.Dev strives to foster meaningful connections and facilitate successful collaborations.
 ## Tech Stack
 
-**Client:** HTML, CSS, Javascript
-
-**Server:** None
+- HTML
+- CSS
+- Javascript
 
 ## Deployment
 
