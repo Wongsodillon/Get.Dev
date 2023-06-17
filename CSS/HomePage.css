@@ -19,6 +19,9 @@ p, label {
   margin: 0;
   font-family: Inter;
 }
+* {
+  transition: all 0.3s ease-in-out;
+}
 body {
   background-color: var(--background-color);
   background-image: var(--mesh-gradient);
@@ -357,7 +360,133 @@ label {
   background-color: var(--black);
   color: var(--white);
 }
-@media (max-width: 768px) {
-  /*TODO*/
-  
+@media (max-width: 900px) {
+  /* Adjust navbar */
+  body {
+    overflow-x: hidden;
+  }
+  .header-logo {
+    margin-left: 0.5rem;
+  }
+  .logo {
+    width: 3.5rem !important;
+    height: 3rem !important;
+  }
+  .dialog {
+    font-size: 0.75rem !important;
+  }
+  .getdev {
+    font-size: 1.3rem !important;
+  }
+  .profile-bar {
+    padding-right: 1rem;
+  }
+  .username {
+    font-size: 1rem;
+  }
+  .profile-pic {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+  .notif-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  /* Adjust search container */
+  .search-container {
+    padding-top: 3.5rem;
+    height: 3.5rem;
+  }
+  .forms > input {
+    width: clamp(100px, 90vw, 18rem);
+    font-size: 0.9rem;
+  }
+
+  /* Adjust main content */
+  main {
+    margin-inline: 2rem;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  aside {
+    width: 100%;
+  }
+
+  /* Adjust job list */
+  .job-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  /* Adjust job details */
+  .job {
+    width: calc(100vw - 20%);
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    padding-inline: 1rem;
+    padding-block: 0.5rem;
+  }
+
+  .job-img {
+    width: 100%;
+    height: 200%;
+    max-height: 8rem;
+    object-fit: cover;
+    margin-bottom: 1rem;
+  }
+
+  .upper-details {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .upper-right-details {
+    flex-direction: row;
+    align-items: flex-start;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
+  .job-title {
+    font-size: 1.25rem;
+  }
+
+  .company-size {
+    margin-top: 0.25rem;
+  }
+
+  .level-container {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .lower-details {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .button-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    margin-right: 0;
+  }
+
+  .button-container > button {
+    width: 100%;
+    padding-inline: 0;
+    height: auto;
+    text-align: center;
+  }
+  .pagination {
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+  }
+
 }

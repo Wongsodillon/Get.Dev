@@ -26,7 +26,7 @@ body {
   background-image: var(--mesh-gradient);
   margin: 0;
   padding: 0;
-  padding-block-end: 100rem;
+  padding-block-end: 20rem;
 }
 html {
   scroll-behavior: smooth;
@@ -203,6 +203,9 @@ th, td {
   opacity: 0.8;
   cursor: pointer;
 }
+.no-applicants {
+  margin-bottom: 1rem;
+}
 .back-button {
   width: 6rem;
   height: 2.5rem;
@@ -322,7 +325,7 @@ th, td {
   background-color: #dcd6d6;
   transition: opacity 0.15s;
 }
-.button-container > img {
+.button-container > * {
   width: 2.5rem;
   height: 2.5rem;
   cursor: pointer;
@@ -482,4 +485,82 @@ input, select {
   color:var(--blue);
   cursor: pointer;
   font-size: 1rem;
+}
+@media (max-width: 900px) {
+  /* Adjust navbar */
+  body {
+    overflow-x: hidden;
+  }
+  
+
+  /* Adjust job list */
+  .job-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  /* Adjust job details */
+  .job {
+    width: calc(100vw - 20%);
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    padding-inline: 1rem;
+    padding-block: 0.5rem;
+  }
+
+  .job-img {
+    width: 100%;
+    height: 200%;
+    max-height: 8rem;
+    object-fit: cover;
+    margin-bottom: 1rem;
+  }
+
+  .upper-details {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .upper-right-details {
+    flex-direction: row;
+    align-items: flex-start;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
+  .job-title {
+    font-size: 1.25rem;
+  }
+
+  .company-size {
+    margin-top: 0.25rem;
+  }
+
+  .level-container {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .lower-details {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .button-container {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 0.5rem;
+    margin-right: 0;
+  }
+
+  .button-container > button {
+    width: 100%;
+    padding-inline: 0;
+    height: auto;
+    text-align: center;
+  }
 }

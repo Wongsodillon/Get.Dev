@@ -27,9 +27,13 @@ body {
   padding: 0;
   min-height: 100vh;
   position: relative;
+  overflow-x: hidden;
 }
 html {
   scroll-behavior: smooth;
+}
+* {
+  transition: all 0.34s ease-in-out;
 }
 .navbar {
   display: flex;
