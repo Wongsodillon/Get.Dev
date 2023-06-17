@@ -108,10 +108,21 @@ html {
   color: #C3C702;
 }
 .applicant-list {
-  width: 62.5vw;
+  display: flex;
+  flex-direction: column;
   border: none;
   border-radius: 8px;
   padding: 1.5rem;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s ease-out;
+}
+.applicant-list[open] {
+  opacity: 1;
+  visibility: visible;
+}
+.applicant-list::backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
 }
 .dialog-title {
   font-size: 1.75rem;
@@ -133,9 +144,7 @@ th {
   width: 100%;
   justify-content: center;
 }
-.back-button {
 
-}
 .custom-table {
   width: 100%;
   border-collapse: collapse;

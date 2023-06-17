@@ -1,6 +1,8 @@
 import { JobList } from "./JobDatabase.js";
 
 const user = JSON.parse(localStorage.getItem("User"))
+const usernameText = document.querySelector(".username").textContent = user.username
+const profilePic = document.getElementById("profile-pic").src = user.img
 
 const Jobs = JSON.parse(localStorage.getItem("List"))
 
@@ -25,6 +27,12 @@ jobType.textContent = job.type
 jobLevel.textContent = job.level
 jobSalary.textContent = `Rp ${job.salaryStart.toLocaleString()} - Rp ${job.salaryEnd.toLocaleString()}`
 jobPosted.textContent = `Posted on ${job.date}`
+
+document.querySelector(".back-icon").addEventListener("click", () => window.location.href = `HomePage.html`)
+
+const navigateEditProfile = () => window.location.href = `EditProfile.html`
+document.getElementById("profile-pic").addEventListener("click", navigateEditProfile)
+document.querySelector(".username").addEventListener("click", navigateEditProfile)
 
 generateRequirements()
 

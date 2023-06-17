@@ -37,16 +37,6 @@ function getJobById(JobID) {
 }
 
 
-function titleNavigate() {
-    let titles = document.querySelectorAll(".job-title")
-    titles.forEach(title => {
-        title.addEventListener("click", () => {
-            const JobID = title.classList[1]
-            window.location.href = `JobDetails.html?id=${JobID}`
-        })
-    })
-}
-
 function applicantButton() {
     let buttons = document.querySelectorAll(".apply-button")
     buttons.forEach(button => {
@@ -65,6 +55,16 @@ function viewApplicants(e, JobID, DOM) {
     dialog.querySelector(".dialog-job-title").textContent = `${job.title} Applicants`
     const backButton = dialog.querySelector(".back-button")
     const tableBody = dialog.querySelector("tbody")
+    const table = dialog.querySelector("table")
+    const noApplicants = dialog.querySelector(".no-applicants")
+    if (applicants.length <= 0) {
+        table.style.display = "none"
+        noApplicants.style.display = "block"
+    }
+    else {
+        noApplicants.style.display = "none"
+        table.style.display = "block"
+    }
     tableBody.innerHTML = ``
     for (let i = 0; i < applicants.length; i++) {
         const row = document.createElement("tr")
@@ -203,7 +203,6 @@ function displayJobs() {
         job.append(jobImg,jobDetails)
         list.insertBefore(job, addButton)
     }
-    titleNavigate()
     applicantButton()
 }
 

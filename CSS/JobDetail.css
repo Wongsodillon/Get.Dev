@@ -1,5 +1,5 @@
 :root {
-  --white: #f4f4f4;
+  --white: #fafafa;
   --black: #101010;
   --background-color: hsla(211, 95%, 25%, 1);
   --mesh-gradient: radial-gradient(at 7% 11%, hsla(207,100%,28%,1) 0px, transparent 50%),
@@ -94,6 +94,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 5%;
 }
 .header-mid {
   display: flex;
@@ -137,7 +138,12 @@ header {
   height: 21.25px;
   margin-inline-end: 0.5rem;
 }
-
+.back-icon {
+  width: 3rem;
+  height: 3rem;
+  filter: contrast(200%);
+  cursor: pointer;
+}
 .details {
   width: clamp(80%, 80vw, 80%);
   display: flex;

@@ -92,6 +92,14 @@ trackJobs.addEventListener("click", () => {
     section1.style.display = "none"
 })
 logout.addEventListener("click", () => {
+    // console.log(JSON.parse(localStorage.getItem("Users")))
+    // console.log(user)
+    let tmpList = JSON.parse(localStorage.getItem("Users"))
+    let getIndex = tmpList.findIndex(u => u.id === user.id)
+    // console.log(getIndex)
+    tmpList[getIndex] = user
+    console.log(tmpList)
+    localStorage.setItem("Users", JSON.stringify(tmpList))
     window.history.pushState({}, '', 'loginPage.html');
     window.location.href = "loginPage.html"
 })
@@ -187,12 +195,6 @@ function displayApplied() {
     }
 }
 
-const emptyMessage = document.querySelector(".empty")
-emptyMessage.style.display = "none"
-if (user.saved.length <= 0) {
-    emptyMessage.textContent = "No Job Saved"
-    emptyMessage.style.display = "block"
-}
 const savedNav = document.getElementById("saved")
 const appliedNav = document.getElementById("applied")
 savedNav.addEventListener("click", () => {
@@ -201,14 +203,7 @@ savedNav.addEventListener("click", () => {
         savedNav.classList.add("active")
     }
     appliedNav.classList.remove("active")
-    if (user.saved.length <= 0) {
-        emptyMessage.textContent = "No Job Saved"
-        emptyMessage.style.display = "block"
-    }
-    else {
-        emptyMessage.style.display = "none"
-        displaySaved()
-    }
+    displaySaved()
 })
 appliedNav.addEventListener("click", () => {
     jobContainer.innerHTML = ``
@@ -216,15 +211,7 @@ appliedNav.addEventListener("click", () => {
         appliedNav.classList.add("active")
     }
     savedNav.classList.remove("active")
-    if (user.applied.length <= 0) {
-        emptyMessage.textContent = "No Jobs Applied"
-        emptyMessage.styles.display = "block"
-    }
-    else {
-        emptyMessage.textContent = "No Jobs Applied"
-        emptyMessage.style.display = "none"
-        displayApplied()
-    }
+    displayApplied()
 })
 
 function updateSaved(data) {

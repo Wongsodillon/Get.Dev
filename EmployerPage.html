@@ -32,9 +32,16 @@
     <button class="manage-button active">Manage Jobs</button>
     <button class="seek-button">Seek Developers</button>
   </nav>
+  <div class="job-list">
+    <button class="add-job-button" id="add-job">
+      <p class="post-job-text">Post Job</p>
+      <img src="assets/add-icon.png" class="add-icon">
+    </button>
+  </div>
   <dialog class="applicant-list">
     <p class="dialog-title">Applicants</p>
     <p class="dialog-job-title"></p>
+    <p class="no-applicants">No Applicants</p>
     <table class="custom-table">
       <thead>
         <tr>
@@ -54,12 +61,6 @@
       <button class="back-button">Back</button>
     </div>
   </dialog>
-  <div class="job-list">
-    <button class="add-job-button" id="add-job">
-      <p class="post-job-text">Post Job</p>
-      <img src="assets/add-icon.png" class="add-icon">
-    </button>
-  </div>
   <dialog class="post-job" id="post-job">
     <nav class="modal-nav">
       <p class="modal-title">Post Job</p>

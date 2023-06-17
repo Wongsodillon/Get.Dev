@@ -358,9 +358,6 @@ label {
   color: var(--white);
 }
 @media (max-width: 768px) {
-  aside {
-    display: flex;
-    max-width: 100%;
-    align-items: center;
-  }
+  /*TODO*/
+  
 }

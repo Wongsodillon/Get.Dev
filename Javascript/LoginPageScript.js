@@ -1,13 +1,15 @@
 import { users } from "./UserDatabase.js"
 
-console.log(users)
-
+if (localStorage.getItem("Users") === null) {
+    localStorage.setItem("Users", JSON.stringify(users))
+}
 document.querySelector(".sign-up").onclick = () => {
     window.location.href = "register.html"
 }  
 
 const validateCredentials = (email, password) => {
-    const credentials = users.find(user => user.email === email || user.username === email)
+    const usersList = JSON.parse(localStorage.getItem("Users"))
+    const credentials = usersList.find(usersList => usersList.email === email || usersList.username === email)
     console.log(credentials)
     if (credentials === undefined) return null
     else if (String(credentials.password) !== String(password)) return false
@@ -36,7 +38,6 @@ const loginValidate = e => {
             message.textContent = "Incorrect password";
         } else if (result) {
             sessionStorage.clear()
-            localStorage.setItem("Users", JSON.stringify(users))
             localStorage.setItem("User", JSON.stringify(result))
             if (result.role === "employer") window.location.href = `EmployerPage.html`
             else {
