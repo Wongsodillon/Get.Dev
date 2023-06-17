@@ -28,7 +28,7 @@ jobLevel.textContent = job.level
 jobSalary.textContent = `Rp ${job.salaryStart.toLocaleString()} - Rp ${job.salaryEnd.toLocaleString()}`
 jobPosted.textContent = `Posted on ${job.date}`
 
-document.querySelector(".back-icon").addEventListener("click", () => window.location.href = `HomePage.html`)
+document.querySelector(".back-icon").addEventListener("click", () => window.history.back())
 
 const navigateEditProfile = () => window.location.href = `EditProfile.html`
 document.getElementById("profile-pic").addEventListener("click", navigateEditProfile)

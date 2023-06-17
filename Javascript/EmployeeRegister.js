@@ -25,10 +25,10 @@ next1.addEventListener("click", e => {
     username = document.getElementById("username").value
     password = document.getElementById("password").value
     confirm = document.getElementById("confirm").value
-    // let validate = createValidate(username, password, confirm)
-    // if (validate == false) {
-    //     return
-    // }
+    let validate = createValidate(username, password, confirm)
+    if (validate == false) {
+        return
+    }
     form1.style.display = "none"
     form2.style.display = "flex"
 })
@@ -45,11 +45,11 @@ next2.addEventListener("click", e => {
     phn = document.getElementById("phn").value
     country = document.getElementById("country").value
     dob = document.getElementById("dob").value.trim()
-    // let validate = personalValidate(first,last,email,phn,country,dob)
-    // if (validate === false) {
-    //     return
-    // }
-    // console.log(first, last, email, phn, country, dob)
+    let validate = personalValidate(first,last,email,phn,country,dob)
+    if (validate === false) {
+        return
+    }
+    console.log(first, last, email, phn, country, dob)
     form2.style.display = "none"
     form3.style.display = "flex"
 })
@@ -65,6 +65,7 @@ submit.addEventListener("click", e => {
     e.preventDefault()
     let id = (users.length + 1).toString()
     console.log(id)
+    // const usersList = JSON.parse(localStorage.getItem("Users"))
     // let tmp = [id, username,password,"employee",first,last, email,phn, country,dob]
     // addUser(...tmp)
     // console.log(users)

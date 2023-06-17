@@ -41,7 +41,7 @@ function fillForm() {
 
 const profileForm = document.getElementById("profile-form")
 const addressForm = document.getElementById("address-form")
-document.querySelector(".back-to-home").addEventListener("click", () => window.location.href = `HomePage.html`)
+document.querySelector(".back-to-home").addEventListener("click", () => window.history.back())
 function updateUserDetails(...args) {
     user.firstName = args[0]
     user.lastName = args[1]
@@ -282,7 +282,7 @@ function cancelConfirmation(e, jobID, DOMElement) {
     })
     cancelButton.addEventListener("click", () => {
         user.applied = user.applied.filter(id => id !== cancelConfirm.classList[1])
-        DOMElement.closest(".job").style.display = "none"
+        console.log(DOMElement.closest(".job"))
         updateApplicationList(user.applied)
         console.log(user.applied)
         const tmpJobs = JSON.parse(localStorage.getItem("List"))
@@ -294,9 +294,7 @@ function cancelConfirmation(e, jobID, DOMElement) {
         dialog.className = "cancel-confirm"
         cancelButton.className = "cancel-button"
         dialog.close()
-        if (user.applied.length <= 0) {
-            emptyMessage.textContent = "No Jobs Applied"
-            emptyMessage.style.display = "block"
-        }
+        jobContainer.innerHTML = ``
+        displayApplied()
     })
 }
