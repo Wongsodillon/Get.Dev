@@ -318,10 +318,40 @@ main {
   font-size: 1.125rem;
 }
 @media screen and (max-width: 900px) {
+  /*make this website responsive on mobile*/
+  .search-container {
+    width: 100%;
+    min-width: 0;
+  }
+  .search-bar {
+    width: 100%;
+  }
   .developers {
     grid-template-columns: repeat(1, 1fr);
   }
+
   .developer-details {
-    width: 25rem;
+    width: 100%;
+    padding-inline: 1rem;
+    padding-block: 1rem;
+  }
+  .modal-title {
+    font-size: 1.25rem;
+  }
+  .modal-email {
+    font-size: 0.875rem;
+  }
+  .message-field {
+    font-size: 0.875rem;
+  }
+  .modal-buttons > button {
+    font-size: 0.875rem;
+  }
+  .message-sent {
+    width: 10rem;
+    height: 3rem;
+  }
+  .message-sent > p {
+    font-size: 0.875rem;
   }
 }
