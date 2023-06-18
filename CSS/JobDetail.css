@@ -276,3 +276,68 @@ ul {
 .apply-buttons > button:hover {
   opacity: 0.7;
 }
+
+@media only screen and (max-width: 900px) {
+  header {
+    flex-wrap: wrap;
+    height: auto;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .header-left,
+  .header-right {
+    flex: 1;
+    width: 100%;
+    padding: 1rem;
+  }
+  .header-left {
+    align-items: start;
+    justify-content: start;
+    gap: 0;
+  }
+  .header-mid {
+    flex: 1;
+    gap: 5%;
+  }
+
+  .header-right {
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    gap: 5%;
+  }
+
+  .job-img {
+    width: 10rem;
+    height: 10rem;
+  }
+
+  .job-title {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .company-name {
+    font-size: 1.25rem;
+    font-style: italic;
+  }
+
+  .details {
+    gap: 10%;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+  .header-right {
+    flex-direction: row;
+  }
+  .apply-button,
+  .save-button {
+    padding-inline: 1rem;
+    font-size: 0.9rem;
+  }
+
+  .save-button {
+    width: auto;
+  }
+}

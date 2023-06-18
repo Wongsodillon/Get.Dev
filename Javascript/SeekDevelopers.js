@@ -55,7 +55,6 @@ searchBar.addEventListener("submit", event => {
     event.preventDefault()
     const searchBox = document.querySelector(".search-bar")
     const search = searchBox.value.trim().toLowerCase()
-    let found = false
     let searchResult = searchDevelopers(search)
     console.log(searchResult)
     listContainer.innerHTML = ``
@@ -82,9 +81,7 @@ function viewDetails(name, e) {
 function closeDetails(e) {
     e.preventDefault()
     const dialog = document.querySelector(".developer-details")
-    // dialog.querySelector(".email-copied").style.display = "none"
     dialog.close()
-    
 }
 
 function sendMessage(e) {

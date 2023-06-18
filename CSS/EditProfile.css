@@ -366,6 +366,8 @@ textarea {
   body {
     padding-inline: 1rem;
     padding-block: 2rem;
+    flex-direction: column;
+    overflow-x: hidden;
   }
 
   aside {
@@ -379,6 +381,7 @@ textarea {
     width: 100%;
     padding-left: 1rem;
     padding-right: 1rem;
+
   }
 
   .title {
@@ -386,14 +389,15 @@ textarea {
     margin-top: 2rem;
     margin-bottom: 1.5rem;
   }
-
+  .main-container {
+    padding-inline: 1rem;
+  }
   .main-container, .forms {
     margin-inline: 0;
     margin-block: 1.5rem;
   }
-
   .form-container > input, .form-container > textarea {
-    width: 100%;
+    width: 96%;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
   }
@@ -411,6 +415,9 @@ textarea {
     width: 100%;
     margin-top: 1.5rem;
   }
+  .job-container {
+    align-items: center;
+  }
   .job-list {
     display: flex;
     flex-direction: column;
@@ -420,7 +427,6 @@ textarea {
 
   /* Adjust job details */
   .job {
-    width: auto;
     height: auto;
     display: flex;
     flex-direction: column;
@@ -472,6 +478,7 @@ textarea {
     align-items: flex-start;
     gap: 0.5rem;
     margin-right: 0;
+    margin-top: 1rem;
   }
 
   .button-container > button {
@@ -479,5 +486,9 @@ textarea {
     padding-inline: 0;
     height: auto;
     text-align: center;
+  }
+  .title-2 {
+    font-size: 1.5rem;
+    margin-top: 2rem;
   }
 }

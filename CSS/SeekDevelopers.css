@@ -159,13 +159,15 @@ main {
   gap: 4%;
 }
 .dev-profile {
+  flex: 1;
+  max-width: 23vw;
   height: 23vh;
-  width: 23vh;
 }
 .dev-info {
   display: flex;
   flex-direction: column;
   gap: 6px;
+  flex: 3;
 }
 .profession-container {
   width: auto;
@@ -318,5 +320,8 @@ main {
 @media screen and (max-width: 900px) {
   .developers {
     grid-template-columns: repeat(1, 1fr);
+  }
+  .developer-details {
+    width: 25rem;
   }
 }
