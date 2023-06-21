@@ -42,7 +42,6 @@ password: employer
 - Track saved & applied Jobs: Developers can see what jobs they have saved and applied, this makes it easy for developers to manage their list of jobs that they have applied or saved
 
 #### Employer
-- Post new Jobs: Employers can create and post new job listings, providing detailed information about the job title, job description, required skills, experience level, and any additional preferences.
 - View Applicants: Employers can easily access and review applications submitted by developers for their job listings. They can view the details of each applicant, including their profile, resume. This feature assists employers in evaluating candidates and making informed hiring decisions.
 - Search for Developers: Employers have the ability to search for developers based on specific criteria such as professions, experience, location. This feature helps employers identify potential candidates who match their requirements and facilitates efficient talent acquisition.
 
